@@ -1,0 +1,37 @@
+<html>
+<head>
+    <base href="/">
+    <title>Angular JS 2</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bootstrap-theme.min.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <!-- 1. Load libraries -->
+    <!-- Polyfill(s) for older browsers -->
+    <script src="node_modules/core-js/client/shim.min.js"></script>
+    <script src="node_modules/zone.js/dist/zone.js"></script>
+    <script src="node_modules/reflect-metadata/Reflect.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <!-- 2. Configure SystemJS -->
+    <script src="systemjs.config.js"></script>
+    <script>
+        System.import('app').catch(function (err) {
+            console.error(err);
+        });
+    </script>
+    <style>
+        body {
+            padding-top: 70px;
+        }
+    </style>
+</head>
+<!-- 3. Display the application -->
+<body>
+<my-header>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation"></nav>
+</my-header>
+<div class="container">
+    <my-app>Loading...</my-app>
+</div>
+</body>
+</html>
