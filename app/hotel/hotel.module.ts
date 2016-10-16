@@ -6,8 +6,10 @@ import {HotelComponent} from "./hotel.component";
 import {HotelListComponent} from "./hotel.list.component";
 import {HotelService} from "./hotel.service";
 import {HttpModule}    from '@angular/http';
+import {FormsModule} from "@angular/forms";
+import {BrowserModule} from "@angular/platform-browser";
 @NgModule({
-    imports: [SharedModule, HotelRoutingModule, HttpModule],
+    imports: [SharedModule, HotelRoutingModule, HttpModule,FormsModule],
     declarations: [
         HotelComponent, HotelListComponent,
     ],

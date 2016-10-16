@@ -1,11 +1,67 @@
 <h1>liste des hotels</h1>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse " id="bs-example-navbar-collapse-1">
+            <div class="navbar-form navbar-left">
+                <div class="form-group">
+                    <input type="date" class="form-control" [(ngModel)]="search.checkIn" placeholder="checkIn">
+                    <select class="form-control" [(ngModel)]="search.nuitees">
+                        <option value="">Nights</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="1">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    <input type="text" class="form-control" [(ngModel)]="search.name" placeholder="Search">
+                    <input type="text" class="form-control" [(ngModel)]="search.ville" placeholder="City">
+                    <select class="form-control" [(ngModel)]="search.etoiles">
+                        <option value="">Number of stars</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="1">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li ngClass="{'active':search.orderBy=='libelle'}">
+                        <a href="javascript:void(0)" ng-click=" updateSort('libelle'); update();">
+                            Names
+                            <span *ngIf="search.order=='DESC' && search.orderBy=='libelle'">&uarr;</span>
+                            <span *ngIf="search.order=='ASC' && search.orderBy=='libelle'">&darr;</span>
+                        </a>
+                    </li>
+                    <li ngClass="{'active':search.orderBy=='categorie'}">
+                        <a href="javascript:void(0)" ng-click=" updateSort('categorie'); update();">
+                            Stars
+                            <span *ngIf="search.order=='DESC' && search.orderBy=='categorie'">&uarr;</span>
+                            <span *ngIf="search.order=='ASC' && search.orderBy=='categorie'">&darr;</span>
+                        </a>
+                    </li>
+                    <li ngClass="{'active':search.orderBy=='ville'}">
+                        <a href="javascript:void(0)" ng-click=" updateSort('ville');update();">
+                            Cities
+                            <span *ngIf="search.order=='DESC' && search.orderBy=='ville'">&uarr;</span>
+                            <span *ngIf="search.order=='ASC' && search.orderBy=='ville'">&darr;</span>
+                        </a>
+                    </li>
+                    <li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</nav>
 <p *ngIf="loadingList">Loading ...</p>
-<div class="col-md-12 " *ngFor="let hotel of hotels" >
+<div class="col-md-12 " *ngFor="let hotel of hotels">
     <div class="thumbnail">
         <div class="caption">
             <div class="row">
                 <div class="col-md-9">
-                    <h4>{{hotel.details.libelle}} <small>({{hotel.saison}})</small></h4>
+                    <h4>{{hotel.details.libelle}}
+                        <small>({{hotel.saison}})</small>
+                    </h4>
                     <div [innerHTML]="hotel.details.description_courte"></div>
                     <span *ngFor="let tag of hotel.details.tags"> #{{tag.libelle}} </span>
                 </div>

@@ -11,7 +11,7 @@ export class HotelService {
     return Promise.reject(error.message || error);
   }
 
-  private heroesUrl = 'http://os-travel.com/api/hotels?nuitees=1&checkIn=2016-05-05&limit=4&offset=5';  // URL to web api
+  private heroesUrl = 'http://os-travel.com/api/hotels?nuitees=1&checkIn=2016-05-05&limit=30&offset=5';  // URL to web api
   constructor(private http: Http) {
   }
 
