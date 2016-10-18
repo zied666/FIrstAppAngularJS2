@@ -75,3 +75,9 @@
         </div>
     </div>
 </div>
+<div class="search-results"
+     infinite-scroll
+     [infiniteScrollDistance]="2"
+     [infiniteScrollThrottle]="500"
+     (scrolled)="onScroll()">
+</div>

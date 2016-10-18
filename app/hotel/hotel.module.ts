@@ -7,9 +7,9 @@ import {HotelListComponent} from "./hotel.list.component";
 import {HotelService} from "./hotel.service";
 import {HttpModule}    from '@angular/http';
 import {FormsModule} from "@angular/forms";
-
+import { InfiniteScrollModule } from 'angular2-infinite-scroll';
 @NgModule({
-    imports: [SharedModule, HotelRoutingModule, HttpModule,FormsModule ],
+    imports: [SharedModule, HotelRoutingModule, HttpModule,FormsModule,InfiniteScrollModule ],
     declarations: [
         HotelComponent, HotelListComponent,
     ],
