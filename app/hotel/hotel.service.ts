@@ -2,6 +2,7 @@ import {Injectable}    from '@angular/core';
 import {Headers, Http, URLSearchParams} from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 import {Hotel} from './hotel';
+import {Search} from "./search";
 
 
 @Injectable()
@@ -17,7 +18,7 @@ export class HotelService {
 
     getHotels(search): Promise<Hotel[]> {
         let params = new URLSearchParams();
-        params.set('nuitees', search.nuitees); // the user's search value
+        params.set('nuitees', search.nuitees ); // the user's search value
         params.set('checkIn', search.checkIn);
         params.set('limit', search.limit);
         params.set('offset', search.offset);

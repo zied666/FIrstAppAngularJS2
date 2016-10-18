@@ -27,21 +27,21 @@
                 </div>
                 <ul class="nav navbar-nav navbar-right">
                     <li ngClass="{'active':search.orderBy=='libelle'}">
-                        <a href="javascript:void(0)" ng-click=" updateSort('libelle'); update();">
+                        <a href="javascript:void(0)" (click)=" updateSort('libelle');">
                             Names
                             <span *ngIf="search.order=='DESC' && search.orderBy=='libelle'">&uarr;</span>
                             <span *ngIf="search.order=='ASC' && search.orderBy=='libelle'">&darr;</span>
                         </a>
                     </li>
                     <li ngClass="{'active':search.orderBy=='categorie'}">
-                        <a href="javascript:void(0)" ng-click=" updateSort('categorie'); update();">
+                        <a href="javascript:void(0)" (click)=" updateSort('categorie');">
                             Stars
                             <span *ngIf="search.order=='DESC' && search.orderBy=='categorie'">&uarr;</span>
                             <span *ngIf="search.order=='ASC' && search.orderBy=='categorie'">&darr;</span>
                         </a>
                     </li>
                     <li ngClass="{'active':search.orderBy=='ville'}">
-                        <a href="javascript:void(0)" ng-click=" updateSort('ville');update();">
+                        <a href="javascript:void(0)" (click)=" updateSort('ville');">
                             Cities
                             <span *ngIf="search.order=='DESC' && search.orderBy=='ville'">&uarr;</span>
                             <span *ngIf="search.order=='ASC' && search.orderBy=='ville'">&darr;</span>
@@ -54,7 +54,7 @@
         </div>
     </div>
 </nav>
-<p *ngIf="loadingList">Loading ...</p>
+<div *ngIf="loadingList"><img style="display: block; margin-left: auto; margin-right: auto" src="assets/img/loading.jpg" /></div>
 <div class="col-md-12 " *ngFor="let hotel of hotels">
     <div class="thumbnail">
         <div class="caption">

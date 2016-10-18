@@ -3,6 +3,7 @@ import {BrowserModule}  from '@angular/platform-browser';
 
 /* App Root */
 import {AppComponent}   from './app.component';
+import { InfiniteScrollModule } from 'angular2-infinite-scroll';
 
 /* Feature Modules */
 import {ContactModule}    from './contact/contact.module';
