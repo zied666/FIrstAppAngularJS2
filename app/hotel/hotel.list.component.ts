@@ -2,7 +2,6 @@ import {Component, OnInit}   from '@angular/core';
 import {HotelService} from "./hotel.service";
 import {Hotel} from "./hotel";
 import {Search} from "./search";
-import {and} from "@angular/router/src/utils/collection";
 
 @Component({
     moduleId: module.id,
@@ -22,6 +21,7 @@ export class HotelListComponent implements OnInit {
 
 
     ngOnInit() {
+        this.hotels=[];
         this.haveMore = true;
         this.search.checkIn = new Date().toISOString().slice(0, 10).replace(/-/g, "-");
         this.search.limit = 10;
@@ -33,11 +33,7 @@ export class HotelListComponent implements OnInit {
         this.search.ville = "";
         this.search.etoiles = "";
         this.loadingList = true;
-        this.hotelService.getHotels(this.search).then(hotels => {
-            this.loadingList = false;
-            this.hotels = hotels;
-        });
-        ;
+        this.getHotels();
     }
 
     onChange() {
@@ -49,7 +45,7 @@ export class HotelListComponent implements OnInit {
     }
 
     getHotels() {
-        this.hotelService.getHotels(this.search).then(hotels => {
+        this.hotelService.getHotels(this.search).subscribe(hotels => {
             this.loadingList = false;
             this.loadingMore = false;
             if (hotels.length > 0)

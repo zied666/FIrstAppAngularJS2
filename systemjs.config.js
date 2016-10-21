@@ -22,7 +22,7 @@
       '@angular/router': 'npm:@angular/router/bundles/router.umd.js',
       '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
       // other libraries
-      'rxjs':                      'npm:rxjs',
+      'rxjs':'npm:rxjs',
       'angular-in-memory-web-api': 'npm:angular-in-memory-web-api',
       'angular2-infinite-scroll': 'https://unpkg.com/angular2-infinite-scroll@0.2.3'
     },
@@ -33,6 +33,7 @@
         defaultExtension: 'js'
       },
       rxjs: {
+        main: './Rx.js',
         defaultExtension: 'js'
       },
       'angular-in-memory-web-api': {

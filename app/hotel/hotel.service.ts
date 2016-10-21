@@ -1,22 +1,18 @@
 import {Injectable}    from '@angular/core';
-import {Headers, Http, URLSearchParams} from '@angular/http';
+import { Http, URLSearchParams, Response} from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 import {Hotel} from './hotel';
-import {Search} from "./search";
-
+import {Observable} from "rxjs";
+import "rxjs";
+import "rxjs/Rx";
 
 @Injectable()
 export class HotelService {
-    private handleError(error: any): Promise<any> {
-        console.error('An error occurred', error); // for demo purposes only
-        return Promise.reject(error.message || error);
-    }
-
     private heroesUrl = 'http://os-travel.com/api/hotels';  // URL to web api
     constructor(private http: Http) {
     }
 
-    getHotels(search): Promise<Hotel[]> {
+    getHotels(search): Observable<Hotel[]> {
         let params = new URLSearchParams();
         params.set('nuitees', search.nuitees ); // the user's search value
         params.set('checkIn', search.checkIn);
@@ -28,9 +24,9 @@ export class HotelService {
         params.set('orderBy', search.orderBy);
         params.set('order', search.order);
         return this.http.get(this.heroesUrl, {search: params})
-            .toPromise()
-            .then(response => response.json() as Hotel[])
-            .catch(this.handleError);
+            .map((res:Response) => res.json())
+            .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
+
     }
 
 }
