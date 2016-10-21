@@ -2,6 +2,7 @@ import {Component, OnInit}   from '@angular/core';
 import {HotelService} from "./hotel.service";
 import {Hotel} from "./hotel";
 import {Search} from "./search";
+import {Subscription} from "rxjs";
 
 @Component({
     moduleId: module.id,
@@ -15,12 +16,15 @@ export class HotelListComponent implements OnInit {
     loadingList: Boolean;
     loadingMore: Boolean;
     haveMore: Boolean;
+    subscribe :Subscription;
+
 
     constructor(private hotelService: HotelService) {
     }
 
 
     ngOnInit() {
+        this.subscribe=null;
         this.hotels=[];
         this.haveMore = true;
         this.search.checkIn = new Date().toISOString().slice(0, 10).replace(/-/g, "-");
@@ -45,7 +49,10 @@ export class HotelListComponent implements OnInit {
     }
 
     getHotels() {
-        this.hotelService.getHotels(this.search).subscribe(hotels => {
+        console.log(this.subscribe);
+        if(this.subscribe != null)
+            this.subscribe.unsubscribe();
+        this.subscribe = this.hotelService.getHotels(this.search).subscribe(hotels => {
             this.loadingList = false;
             this.loadingMore = false;
             if (hotels.length > 0)
