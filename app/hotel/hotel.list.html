@@ -55,6 +55,7 @@
     </div>
 </nav>
 <div *ngIf="loadingList"><img style="display: block; margin-left: auto; margin-right: auto" src="assets/img/loading.jpg" /></div>
+<p *ngIf="!loadingList && hotels.length ==0"class="bg-warning">No hotels available</p>
 <div class="col-md-12 " *ngFor="let hotel of hotels">
     <div class="thumbnail">
         <div class="caption">
