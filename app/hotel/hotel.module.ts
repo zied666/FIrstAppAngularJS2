@@ -8,10 +8,14 @@ import {HotelService} from "./hotel.service";
 import {HttpModule}    from '@angular/http';
 import {FormsModule} from "@angular/forms";
 import { InfiniteScrollModule } from 'angular2-infinite-scroll';
+import {HotelDetailComponent} from "./hotel.detail.component";
+import {HotelDetailGeolocationComponent} from "./hotel.detail.geolocation.component";
+import {HotelDetailFicheComponent} from "./hotel.detail.fiche.component";
+import {HotelDetailSeasonsComponent} from "./hotel.detail.seasons.component";
 @NgModule({
     imports: [SharedModule, HotelRoutingModule, HttpModule,FormsModule,InfiniteScrollModule ],
     declarations: [
-        HotelComponent, HotelListComponent,
+        HotelComponent, HotelListComponent,HotelDetailComponent,HotelDetailGeolocationComponent,HotelDetailFicheComponent,HotelDetailSeasonsComponent
     ],
     providers: [HotelService]
 })

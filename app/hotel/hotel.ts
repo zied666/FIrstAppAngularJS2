@@ -20,5 +20,15 @@ export class Details {
     short_trip_advisor: string;
     ville: Object;
     categorie: Object;
+    chambres: Object;
+    arrangements: Object;
     tags: Object;
+    chaine: Object;
+
+    public getChaine(){
+        if(this.chaine)
+            return "ddd";
+        else
+            return "";
+    }
 }

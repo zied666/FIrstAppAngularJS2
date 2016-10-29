@@ -49,7 +49,6 @@ export class HotelListComponent implements OnInit {
     }
 
     getHotels() {
-        console.log(this.subscribe);
         if(this.subscribe != null)
             this.subscribe.unsubscribe();
         this.subscribe = this.hotelService.getHotels(this.search).subscribe(hotels => {

@@ -6,5 +6,4 @@ import {Component} from '@angular/core';
     templateUrl: `header.html`
 })
 export class HeaderComponent {
-    subtitle = '(Final)';
 }

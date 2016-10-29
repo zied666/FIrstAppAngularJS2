@@ -3,13 +3,14 @@ import { Routes,
          RouterModule } from '@angular/router';
 import {HotelComponent} from "./hotel.component";
 import {HotelListComponent} from "./hotel.list.component";
+import {HotelDetailComponent} from "./hotel.detail.component";
 
 const routes: Routes = [
   { path: '',
     component: HotelComponent,
     children: [
       { path: '',    component: HotelListComponent },
-      /*{ path: ':id', component: HeroDetailComponent }*/
+      { path: ':id', component: HotelDetailComponent }
     ]
   }
 ];

@@ -1,7 +1,7 @@
 import {Injectable}    from '@angular/core';
 import { Http, URLSearchParams, Response} from '@angular/http';
 import 'rxjs/add/operator/toPromise';
-import {Hotel} from './hotel';
+import {Hotel, Details} from './hotel';
 import {Observable} from "rxjs";
 import "rxjs";
 import "rxjs/Rx";
@@ -26,7 +26,12 @@ export class HotelService {
         return this.http.get(this.heroesUrl, {search: params})
             .map((res:Response) => res.json())
             .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
+    }
 
+    getHotel(id): Observable<Details> {
+        return this.http.get(this.heroesUrl+'/'+id)
+            .map((res:Response) => res.json())
+            .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
     }
 
 }
