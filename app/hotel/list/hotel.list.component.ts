@@ -1,12 +1,13 @@
 import {Component, OnInit}   from '@angular/core';
-import {HotelService} from "./hotel.service";
-import {Hotel} from "./hotel";
-import {Search} from "./search";
 import {Subscription} from "rxjs";
+
+import {HotelService} from "../hotel.service";
+import {Hotel} from "../object/hotel";
+import {Search} from "../object/search";
 
 @Component({
     moduleId: module.id,
-    templateUrl: 'hotel.list.html'
+    templateUrl: 'hotel.list.html',
 })
 
 export class HotelListComponent implements OnInit {
@@ -40,7 +41,26 @@ export class HotelListComponent implements OnInit {
         this.getHotels();
     }
 
-    onChange() {
+
+    onChangeCheckIn(event)
+    {
+        this.search.checkIn=event;
+        this.onChange();
+    }
+
+    onChangeVille(event)
+    {
+        this.search.ville=event;
+        this.onChange();
+    }
+
+    onChangeNom(event)
+    {
+        this.search.nom=event;
+        this.onChange();
+    }
+
+    onChange(event=null) {
         this.loadingList = true;
         this.haveMore = true;
         this.hotels = [];
@@ -79,6 +99,6 @@ export class HotelListComponent implements OnInit {
         }
         else
             this.search.orderBy = lib;
-        this.onChange();
+        this.onChange(null);
     }
 }

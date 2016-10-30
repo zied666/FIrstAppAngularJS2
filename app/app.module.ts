@@ -13,6 +13,7 @@ import {CoreModule}       from './core/core.module';
 import {AppRoutingModule} from './app-routing.module';
 import {HeaderComponent} from "./header/header.component";
 import {HomepageComponent} from "./homepage/homepage.component";
+import {LoadingComponent} from "./header/loading.component";
 
 @NgModule({
     imports: [

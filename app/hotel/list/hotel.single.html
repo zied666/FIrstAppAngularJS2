@@ -1,0 +1,18 @@
+<div class="thumbnail">
+    <div class="caption">
+        <div class="row">
+            <div class="col-md-9">
+                <h4>{{hotel.details.libelle}}
+                    <small>({{hotel.saison}})</small>
+                </h4>
+                <div [innerHTML]="hotel.details.description_courte"></div>
+                <span *ngFor="let tag of hotel.details.tags"> #{{tag.libelle}} </span>
+            </div>
+            <div class="col-md-3">
+                <p>{{hotel.details.ville.libelle }}</p>
+                <p>{{hotel.details.categorie.libelle }}</p>
+                <p><a routerLink="{{hotel.details.id}}" class="btn btn-primary" role="button">Détails</a></p>
+            </div>
+        </div>
+    </div>
+</div>

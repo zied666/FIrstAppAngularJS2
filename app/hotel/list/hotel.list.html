@@ -4,7 +4,7 @@
         <div class="collapse navbar-collapse " id="bs-example-navbar-collapse-1">
             <div class="navbar-form navbar-left">
                 <div class="form-group">
-                    <input type="date" class="form-control" (ngModelChange)="onChange($event)" [(ngModel)]="search.checkIn" placeholder="checkIn">
+                    <input type="date" class="form-control" (ngModelChange)="onChangeCheckIn($event)" [(ngModel)]="search.checkIn" placeholder="checkIn">
                     <select class="form-control"  [(ngModel)]="search.nuitees" (ngModelChange)="onChange($event)">
                         <option value="">Nights</option>
                         <option value="1">1</option>
@@ -13,9 +13,8 @@
                         <option value="1">4</option>
                         <option value="5">5</option>
                     </select>
-                    {{teste}}
-                    <input type="text" class="form-control" (ngModelChange)="onChange($event)" [(ngModel)]="search.nom" placeholder="Search">
-                    <input type="text" class="form-control" (ngModelChange)="onChange($event)" [(ngModel)]="search.ville" placeholder="City">
+                    <input type="text" class="form-control" (ngModelChange)="onChangeNom($event)" [(ngModel)]="search.nom" placeholder="Search">
+                    <input type="text" class="form-control" (ngModelChange)="onChangeVille($event)" [(ngModel)]="search.ville" placeholder="City">
                     <select class="form-control" [(ngModel)]="search.etoiles"  (ngModelChange)="onChange($event)">
                         <option value="">Number of stars</option>
                         <option value="1">1</option>
@@ -54,29 +53,12 @@
         </div>
     </div>
 </nav>
-<div *ngIf="loadingList"><img style="display: block; margin-left: auto; margin-right: auto" src="assets/img/loading.jpg" /></div>
+<loading *ngIf="loadingList"></loading>
 <p *ngIf="!loadingList && hotels.length ==0"class="bg-warning">No hotels available</p>
 <div class="col-md-12 " *ngFor="let hotel of hotels">
-    <div class="thumbnail">
-        <div class="caption">
-            <div class="row">
-                <div class="col-md-9">
-                    <h4>{{hotel.details.libelle}}
-                        <small>({{hotel.saison}})</small>
-                    </h4>
-                    <div [innerHTML]="hotel.details.description_courte"></div>
-                    <span *ngFor="let tag of hotel.details.tags"> #{{tag.libelle}} </span>
-                </div>
-                <div class="col-md-3">
-                    <p>{{hotel.details.ville.libelle }}</p>
-                    <p>{{hotel.details.categorie.libelle }}</p>
-                    <p><a routerLink="{{hotel.details.id}}" class="btn btn-primary" role="button">Détails</a></p>
-                </div>
-            </div>
-        </div>
-    </div>
+    <list-single-hotel [hotel]="hotel"></list-single-hotel>
 </div>
-<div *ngIf="loadingMore"><img style="display: block; margin-left: auto; margin-right: auto" src="assets/img/loading.jpg" /></div>
+<loading *ngIf="loadingMore"></loading>
 <div class="search-results"
      infinite-scroll
      [infiniteScrollDistance]="2"

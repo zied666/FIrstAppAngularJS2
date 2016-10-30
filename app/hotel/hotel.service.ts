@@ -1,10 +1,10 @@
 import {Injectable}    from '@angular/core';
 import { Http, URLSearchParams, Response} from '@angular/http';
 import 'rxjs/add/operator/toPromise';
-import {Hotel, Details} from './hotel';
 import {Observable} from "rxjs";
 import "rxjs";
 import "rxjs/Rx";
+import {Hotel, Details} from "./object/hotel";
 
 @Injectable()
 export class HotelService {

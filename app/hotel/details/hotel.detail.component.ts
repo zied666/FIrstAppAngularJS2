@@ -1,10 +1,7 @@
 import {Component, OnInit}   from '@angular/core';
-import {HotelService} from "./hotel.service";
-import {Hotel, Details} from "./hotel";
-import {Search} from "./search";
-import {Subscription} from "rxjs";
 import {ActivatedRoute} from "@angular/router";
-import {HotelDetailGeolocationComponent} from "./hotel.detail.geolocation.component";
+import {HotelService} from "../hotel.service";
+import {Details} from "../object/hotel";
 
 @Component({
     moduleId: module.id,
