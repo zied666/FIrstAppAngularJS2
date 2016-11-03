@@ -14,8 +14,8 @@
             </div>
         </div>
         <hotel-fiche        *ngIf="tab=='technical'"    [hotel]="hotel"></hotel-fiche>
-        <hotel-geolocation  *ngIf="tab=='geolocation'"></hotel-geolocation>
-        <hotel-seasons      *ngIf="tab=='seasons'"></hotel-seasons>
+        <hotel-geolocation  *ngIf="tab=='geolocation'" [hotel]="hotel"></hotel-geolocation>
+        <hotel-seasons      *ngIf="tab=='seasons'" [hotel]="hotel"></hotel-seasons>
     </div>
 </div>
 

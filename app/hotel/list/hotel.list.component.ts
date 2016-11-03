@@ -85,7 +85,6 @@ export class HotelListComponent implements OnInit {
         if (!this.loadingList && !this.loadingMore && this.haveMore) {
             this.search.offset += this.search.limit;
             this.loadingMore = true;
-            console.log(this.search.offset);
             this.getHotels();
         }
     }

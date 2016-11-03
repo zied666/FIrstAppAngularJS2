@@ -24,7 +24,8 @@
       // other libraries
       'rxjs':'npm:rxjs',
       'angular-in-memory-web-api': 'npm:angular-in-memory-web-api',
-      'angular2-infinite-scroll': 'https://unpkg.com/angular2-infinite-scroll@0.2.3'
+      'angular2-infinite-scroll': 'https://unpkg.com/angular2-infinite-scroll@0.2.3',
+      'angular2-google-maps/core': 'npm:angular2-google-maps/core/core.umd.js'
     },
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {

@@ -14,6 +14,7 @@ import {HotelDetailSeasonsComponent} from "./details/hotel.detail.seasons.compon
 import {HotelDetailFicheComponent} from "./details/hotel.detail.fiche.component";
 import {HotelListSingleComponent} from "./list/hotel.list.single.component";
 import {LoadingComponent} from "../header/loading.component";
+import { AgmCoreModule } from 'angular2-google-maps/core';
 
 @NgModule({
     imports: [
@@ -21,7 +22,10 @@ import {LoadingComponent} from "../header/loading.component";
         HotelRoutingModule,
         HttpModule,
         FormsModule,
-        InfiniteScrollModule
+        InfiniteScrollModule,
+        AgmCoreModule.forRoot({
+            apiKey: 'AIzaSyBrmGPKzL57yv1rdDGTFMr0Am6pmZ8t898'
+        })
     ],
     declarations: [
         HotelComponent,
