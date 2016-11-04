@@ -1,5 +1,5 @@
 import {Component, Input}   from '@angular/core';
-import {Details} from "../object/hotel";
+import {Details} from "../../object/hotel";
 @Component({
     moduleId: module.id,
     templateUrl:'hotel.detail.fiche.html',

@@ -1,5 +1,5 @@
 import {Injectable}    from '@angular/core';
-import { Http, URLSearchParams, Response} from '@angular/http';
+import {Http, URLSearchParams, Response} from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 import {Observable} from "rxjs";
 import "rxjs";
@@ -14,7 +14,7 @@ export class HotelService {
 
     getHotels(search): Observable<Hotel[]> {
         let params = new URLSearchParams();
-        params.set('nuitees', search.nuitees ); // the user's search value
+        params.set('nuitees', search.nuitees); // the user's search value
         params.set('checkIn', search.checkIn);
         params.set('limit', search.limit);
         params.set('offset', search.offset);
@@ -24,14 +24,20 @@ export class HotelService {
         params.set('orderBy', search.orderBy);
         params.set('order', search.order);
         return this.http.get(this.heroesUrl, {search: params})
-            .map((res:Response) => res.json())
-            .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
+            .map((res: Response) => res.json())
+            .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
     }
 
     getHotel(id): Observable<Details> {
-        return this.http.get(this.heroesUrl+'/'+id)
-            .map((res:Response) => res.json())
-            .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
+        return this.http.get(this.heroesUrl + '/' + id)
+            .map((res: Response) => res.json())
+            .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
+    }
+
+    getSaisons(id): Observable<Object[]> {
+        return this.http.get(this.heroesUrl + '/' + id + '/saisons')
+            .map((res: Response) => res.json())
+            .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
     }
 
 }

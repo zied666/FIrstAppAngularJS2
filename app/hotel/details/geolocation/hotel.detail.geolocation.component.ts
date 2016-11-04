@@ -1,5 +1,5 @@
 import {Component, Input, OnInit}   from '@angular/core';
-import {Details} from "../object/hotel";
+import {Details} from "../../object/hotel";
 
 
 

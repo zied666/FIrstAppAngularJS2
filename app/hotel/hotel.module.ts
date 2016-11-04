@@ -9,12 +9,12 @@ import {FormsModule} from "@angular/forms";
 import {InfiniteScrollModule} from 'angular2-infinite-scroll';
 import {HotelDetailComponent} from "./details/hotel.detail.component";
 import {HotelListComponent} from "./list/hotel.list.component";
-import {HotelDetailGeolocationComponent} from "./details/hotel.detail.geolocation.component";
-import {HotelDetailSeasonsComponent} from "./details/hotel.detail.seasons.component";
-import {HotelDetailFicheComponent} from "./details/hotel.detail.fiche.component";
 import {HotelListSingleComponent} from "./list/hotel.list.single.component";
 import {LoadingComponent} from "../header/loading.component";
 import { AgmCoreModule } from 'angular2-google-maps/core';
+import {HotelDetailGeolocationComponent} from "./details/geolocation/hotel.detail.geolocation.component";
+import {HotelDetailFicheComponent} from "./details/fiche/hotel.detail.fiche.component";
+import {HotelDetailSeasonsComponent} from "./details/saisons/hotel.detail.seasons.component";
 
 @NgModule({
     imports: [

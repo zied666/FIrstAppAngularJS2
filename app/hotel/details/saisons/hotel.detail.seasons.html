@@ -1,0 +1,42 @@
+<div class="col-md-12 animated tab1">
+    <loading *ngIf="loadingSaisons"></loading>
+    <table class="table" *ngIf="!loadingSaisons">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Contrat</th>
+            <th>Name</th>
+            <th>Kind</th>
+            <th>Perides</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngIf="loadingSaisons">
+            <td colspan="5" style="text-align: center"><loading></loading></td>
+        </tr>
+            <tr  *ngFor="let saison of saisons">
+                <td>{{saison.id}}</td>
+                <td> {{saison.contrat.libelle}}</td>
+                <td> {{saison.libelle}}</td>
+                <td>
+                    <span class="label label-default" *ngIf="saison.type==1">Saison</span>
+                    <span class="label label-primary" *ngIf="saison.type==2">Promotion</span>
+                    <span class="label label-success" *ngIf="saison.type==3">Amicale</span>
+                    <span class="label label-warning" *ngIf="saison.type==4">Contingent</span>
+                    <span class="label label-danger" *ngIf="saison.type==5">EarlyBooking</span>
+                </td>
+                <td>
+                    <p *ngFor="let periode of saison.periodes">
+                        {{periode.date_debut|date:"dd/MM/yyyy" }} -> {{periode.date_fin|date:"dd/MM/yyyy" }}
+                    </p>
+                </td>
+                <td>
+                    <a href="javascript:void(0)"  data-toggle="modal" data-target="#myModal">
+                        Modal
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
