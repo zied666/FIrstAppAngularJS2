@@ -9,19 +9,29 @@ import {HotelService} from "../../hotel.service";
 
 export class HotelDetailSeasonsComponent implements OnInit {
     @Input() hotel: Details;
-    saisons: Object[];
+    saisons: any[];
     loadingSaisons: Boolean;
+    selectedSeason : Object;
 
     constructor(private hotelService: HotelService) {
     }
 
     ngOnInit() {
+        this.selectedSeason=null;
         this.loadingSaisons = true;
         this.hotelService.getSaisons(this.hotel.id).subscribe(saisons => {
             this.saisons = saisons;
             this.loadingSaisons = false;
-            console.log(saisons);
         });
     }
 
+    updateSelectedSeasons(id){
+        for (let season of this.saisons) {
+            if(season.id == id)
+            {
+                this.selectedSeason=season;
+                console.log(this.selectedSeason);
+            }
+        }
+    }
 }
