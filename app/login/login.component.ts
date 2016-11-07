@@ -10,10 +10,15 @@ export class LoginComponent implements OnInit {
 
     login: String;
     password: String;
-    loading:boolean;
+    loading: boolean;
+    confirmed: boolean;
+    error: boolean;
+
 
     ngOnInit() {
-        this.loading=false;
+        this.confirmed = false;
+        this.error = false;
+        this.loading = false;
         this.login = "";
         this.password = "";
     }
@@ -22,8 +27,15 @@ export class LoginComponent implements OnInit {
     }
 
     onSubmit() {
-        this.loading=true;
+        this.loading = true;
         console.log(this.login, this.password);
+        this.loginService.connection(this.login, this.password).subscribe(response => {
+            if (response.data != null)
+                this.confirmed = true;
+            else
+                this.error = true;
+            this.loading = false;
+        });
     }
 
 
