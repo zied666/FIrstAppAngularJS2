@@ -15,6 +15,7 @@ import {HeaderComponent} from "./header/header.component";
 import {HomepageComponent} from "./homepage/homepage.component";
 import {LoginModule} from "./login/login.module";
 import {HashLocationStrategy, LocationStrategy} from "@angular/common";
+import {LoginService} from "./login/login.service";
 
 @NgModule({
     imports: [
@@ -29,7 +30,7 @@ import {HashLocationStrategy, LocationStrategy} from "@angular/common";
         HomepageComponent,
         HeaderComponent
     ],
-    providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
+    providers: [{provide: LocationStrategy, useClass: HashLocationStrategy},LoginService],
     bootstrap: [AppComponent, HeaderComponent]
 })
 export class AppModule {

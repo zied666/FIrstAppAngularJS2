@@ -1,4 +1,7 @@
 import {Component} from '@angular/core';
+import {LoginService} from "../login/login.service";
+import {logInfo} from "typings/dist/support/cli";
+import {Router} from "@angular/router";
 
 @Component({
     moduleId: module.id,
@@ -6,4 +9,15 @@ import {Component} from '@angular/core';
     templateUrl: `header.html`
 })
 export class HeaderComponent {
+
+    constructor(private loginService: LoginService,private router: Router) {
+    }
+
+    logout(){
+        this.loginService.logedUser=null;
+        this.router.navigateByUrl('');
+    }
+
+
+
 }

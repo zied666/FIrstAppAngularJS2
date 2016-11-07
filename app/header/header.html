@@ -26,8 +26,14 @@
                 </li>
             </ul>
             <ul class="nav navbar-nav" style="float: right;">
-                <li>
+                <li *ngIf="loginService.logedUser == null">
                     <a routerLink="login" routerLinkActive="active">Login</a>
+                </li>
+                <li *ngIf="loginService.logedUser != null">
+                    <a routerLink="profile" routerLinkActive="active">Hi {{loginService.logedUser.nom}} {{loginService.logedUser.prenom}}</a>
+                </li>
+                <li *ngIf="loginService.logedUser != null">
+                    <a href="javascript:void(0)" (click)="logout()">Logout</a>
                 </li>
                 <!--<li ng-if="!currentUser">
                     <a href="/login">Sign in</a>

@@ -9,6 +9,7 @@ import {User} from "./user";
 @Injectable()
 export class LoginService {
     private heroesUrl = 'http://os-travel.com/api/connection';  // URL to web api
+    logedUser:User = null;
     constructor(private http: Http) {
     }
 

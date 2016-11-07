@@ -14,6 +14,9 @@ export class LoginComponent implements OnInit {
     confirmed: boolean;
     error: boolean;
 
+    constructor(private loginService: LoginService) {
+    }
+
 
     ngOnInit() {
         this.confirmed = false;
@@ -21,17 +24,18 @@ export class LoginComponent implements OnInit {
         this.loading = false;
         this.login = "";
         this.password = "";
-    }
-
-    constructor(private loginService: LoginService) {
+        if(this.loginService.logedUser!=null)
+            this.confirmed=true;
     }
 
     onSubmit() {
         this.loading = true;
-        console.log(this.login, this.password);
         this.loginService.connection(this.login, this.password).subscribe(response => {
             if (response.data != null)
+            {
+                this.loginService.logedUser=response.data;
                 this.confirmed = true;
+            }
             else
                 this.error = true;
             this.loading = false;
