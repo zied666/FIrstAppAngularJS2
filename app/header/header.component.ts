@@ -1,6 +1,5 @@
 import {Component} from '@angular/core';
 import {LoginService} from "../login/login.service";
-import {logInfo} from "typings/dist/support/cli";
 import {Router} from "@angular/router";
 
 @Component({
