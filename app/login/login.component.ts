@@ -1,5 +1,6 @@
 import {Component, OnInit}      from '@angular/core';
 import {LoginService} from "./login.service";
+import {Router} from "@angular/router";
 
 @Component({
     moduleId: module.id,
@@ -14,7 +15,7 @@ export class LoginComponent implements OnInit {
     confirmed: boolean;
     error: boolean;
 
-    constructor(private loginService: LoginService) {
+    constructor(private loginService: LoginService,private router: Router) {
     }
 
 
@@ -34,6 +35,7 @@ export class LoginComponent implements OnInit {
             if (response.data != null)
             {
                 this.loginService.logedUser=response.data;
+                this.router.navigateByUrl('profile');
                 this.confirmed = true;
             }
             else
