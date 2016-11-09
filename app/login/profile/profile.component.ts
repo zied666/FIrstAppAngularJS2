@@ -26,6 +26,7 @@ export class ProfileComponent implements OnInit {
     update() {
         this.success=true;
         this.loginService.logedUser = Object.assign({}, this.logedUser);
+        localStorage.setItem("currentUser",JSON.stringify(this.logedUser));
     }
 
 

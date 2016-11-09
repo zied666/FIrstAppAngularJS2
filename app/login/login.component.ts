@@ -36,6 +36,7 @@ export class LoginComponent implements OnInit {
             {
                 this.loginService.logedUser=response.data;
                 this.router.navigateByUrl('profile');
+                localStorage.setItem("currentUser",JSON.stringify(response.data));
                 this.confirmed = true;
             }
             else
