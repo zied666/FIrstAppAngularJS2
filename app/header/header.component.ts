@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {LoginService} from "../login/login.service";
 import {Router} from "@angular/router";
+import {LocalStorageService} from "../core/localStorage.service";
 
 @Component({
     moduleId: module.id,
@@ -13,13 +14,13 @@ export class HeaderComponent  implements OnInit {
     }
 
     ngOnInit() {
-        if(localStorage.getItem("currentUser"))
-            this.loginService.logedUser=JSON.parse(localStorage.getItem("currentUser"));
+        if(LocalStorageService.getItem("currentUser"))
+            this.loginService.logedUser=LocalStorageService.getItem("currentUser");
     }
 
     logout(){
         this.loginService.logedUser=null;
-        localStorage.removeItem("currentUser");
+        LocalStorageService.removeItem("currentUser");
         this.router.navigateByUrl('');
     }
 

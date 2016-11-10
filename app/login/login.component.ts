@@ -1,6 +1,7 @@
 import {Component, OnInit}      from '@angular/core';
 import {LoginService} from "./login.service";
 import {Router} from "@angular/router";
+import {LocalStorageService} from "../core/localStorage.service";
 
 @Component({
     moduleId: module.id,
@@ -36,7 +37,7 @@ export class LoginComponent implements OnInit {
             {
                 this.loginService.logedUser=response.data;
                 this.router.navigateByUrl('profile');
-                localStorage.setItem("currentUser",JSON.stringify(response.data));
+                LocalStorageService.setItem("currentUser",response.data);
                 this.confirmed = true;
             }
             else

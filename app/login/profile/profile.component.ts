@@ -2,6 +2,7 @@ import {Component, OnInit}      from '@angular/core';
 import {LoginService} from "../login.service";
 import {User} from "../user";
 import {Router} from "@angular/router";
+import {LocalStorageService} from "../../core/localStorage.service";
 
 @Component({
     moduleId: module.id,
@@ -26,7 +27,7 @@ export class ProfileComponent implements OnInit {
     update() {
         this.success=true;
         this.loginService.logedUser = Object.assign({}, this.logedUser);
-        localStorage.setItem("currentUser",JSON.stringify(this.logedUser));
+        LocalStorageService.setItem("currentUser",this.logedUser);
     }
 
 
