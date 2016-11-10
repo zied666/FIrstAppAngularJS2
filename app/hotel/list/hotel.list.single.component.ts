@@ -1,10 +1,15 @@
-import {Component, Input}   from '@angular/core';
+import {Component, Input, trigger, state, transition, animate, style}   from '@angular/core';
 import {Hotel} from "../object/hotel";
 
 @Component({
     moduleId: module.id,
     templateUrl: 'hotel.single.html',
-    selector:'list-single-hotel'
+    selector:'list-single-hotel',
+    animations: [
+        trigger('myAnimation', [
+            state('true', style({"-webkit-animation-name" : "bounceIn"})),
+        ])
+    ]
 })
 
 export class HotelListSingleComponent {
