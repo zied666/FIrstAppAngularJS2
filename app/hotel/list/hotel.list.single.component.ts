@@ -1,5 +1,6 @@
 import {Component, Input, trigger, state, transition, animate, style}   from '@angular/core';
 import {Hotel} from "../object/hotel";
+import {Search} from "../object/search";
 
 @Component({
     moduleId: module.id,
@@ -14,4 +15,5 @@ import {Hotel} from "../object/hotel";
 
 export class HotelListSingleComponent {
     @Input() hotel: Hotel;
+    @Input() search: Search;
 }

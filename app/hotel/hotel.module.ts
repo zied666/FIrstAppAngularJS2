@@ -15,6 +15,7 @@ import { AgmCoreModule } from 'angular2-google-maps/core';
 import {HotelDetailGeolocationComponent} from "./details/geolocation/hotel.detail.geolocation.component";
 import {HotelDetailFicheComponent} from "./details/fiche/hotel.detail.fiche.component";
 import {HotelDetailSeasonsComponent} from "./details/saisons/hotel.detail.seasons.component";
+import {HotelListSinglePriceComponent} from "./list/hotel.list.single.price.component";
 
 @NgModule({
     imports: [
@@ -31,6 +32,7 @@ import {HotelDetailSeasonsComponent} from "./details/saisons/hotel.detail.season
         HotelComponent,
         HotelListComponent,
         HotelListSingleComponent,
+        HotelListSinglePriceComponent,
         HotelDetailComponent,
         HotelDetailGeolocationComponent,
         HotelDetailFicheComponent,

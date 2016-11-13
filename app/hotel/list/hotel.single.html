@@ -1,17 +1,17 @@
 <div class="thumbnail animated" [@myAnimation]="true">
     <div class="caption">
         <div class="row">
-            <div class="col-md-9">
-                <h4>{{hotel.details.libelle}}
+            <div class="col-md-10">
+                <h4 style="color: black;font-weight: bolder;">{{hotel.details.libelle}}
                     <small>({{hotel.saison}})</small>
                 </h4>
+                <span style="color: black;font-weight: bolder;">{{hotel.details.ville.libelle }}</span> - <span style="color: black;font-weight: bolder;">{{hotel.details.categorie.libelle }}</span>
                 <div [innerHTML]="hotel.details.description_courte"></div>
                 <span *ngFor="let tag of hotel.details.tags"> #{{tag.libelle}} </span>
             </div>
-            <div class="col-md-3">
-                <p>{{hotel.details.ville.libelle }}</p>
-                <p>{{hotel.details.categorie.libelle }}</p>
-                <p><a routerLink="{{hotel.details.id}}" class="btn btn-primary" role="button">Détails</a></p>
+            <div class="col-md-2">
+                <list-single-hotel-price [id]="hotel.details.id" [search]="search"></list-single-hotel-price>
+                <p><a routerLink="{{hotel.details.id}}" class="btn btn-primary" role="button">More Détails</a></p>
             </div>
         </div>
     </div>

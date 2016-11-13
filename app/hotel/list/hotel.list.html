@@ -56,7 +56,7 @@
 <loading *ngIf="loadingList"></loading>
 <p *ngIf="!loadingList && hotels.length ==0"class="bg-warning">No hotels available</p>
 <div class="col-md-12 " *ngFor="let hotel of hotels">
-    <list-single-hotel [hotel]="hotel"></list-single-hotel>
+    <list-single-hotel [hotel]="hotel" [search]="search"></list-single-hotel>
 </div>
 <loading *ngIf="loadingMore"></loading>
 <div class="search-results"
