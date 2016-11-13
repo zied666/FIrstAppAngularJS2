@@ -22,7 +22,6 @@ export class HotelListSinglePriceComponent implements OnInit {
         this.loading = true;
         this.hotelService.getPrice(this.id, this.search, "2").subscribe(
             data => {
-                console.log(data);
                 this.price = data.total + " DT";
                 this.loading = false;
             },
