@@ -5,7 +5,7 @@ import {HotelService} from "../hotel.service";
 
 @Component({
     moduleId: module.id,
-    template: '<h3><img *ngIf="loading" src="https://nashaplaneta.net/images/loading.gif" /><strong *ngIf="!loading">{{ price }}</strong></h3>',
+    template: '<h3><strong *ngIf="!loading">{{ price }}</strong></h3>',
     selector: 'list-single-hotel-price',
 })
 
@@ -21,11 +21,14 @@ export class HotelListSinglePriceComponent implements OnInit {
     ngOnInit() {
         this.loading = true;
         this.hotelService.getPrice(this.id, this.search, "2").subscribe(
-            data => {
+            (data) => {
                 this.price = data.total + " DT";
-                this.loading = false;
+                this.loading = false
             },
-            err => this.price="eeeeeeee",
+            (err) => {
+                this.price = "Erreur";
+                this.loading = false
+            },
         );
     }
 }
