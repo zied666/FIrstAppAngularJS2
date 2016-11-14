@@ -26,13 +26,15 @@
             'angular-in-memory-web-api': 'npm:angular-in-memory-web-api',
             'angular2-infinite-scroll': 'npm:angular2-infinite-scroll',
             'angular2-google-maps/core': 'npm:angular2-google-maps/core/core.umd.js',
+            'ng2-auto-complete': 'npm:ng2-auto-complete/dist',
         },
         // packages tells the System loader how to load when no filename and/or no extension
         packages: {
             app: {main: './main.js', defaultExtension: 'js'},
             rxjs: {main: './Rx.js', defaultExtension: 'js'},
             'angular-in-memory-web-api': {main: './index.js', defaultExtension: 'js'},
-            'angular2-infinite-scroll': {main: 'angular2-infinite-scroll.js', defaultExtension: 'js'}
+            'angular2-infinite-scroll': {main: 'angular2-infinite-scroll.js', defaultExtension: 'js'},
+            'ng2-auto-complete': { main: 'ng2-auto-complete.umd.js', defaultExtension: 'js' }
         }
     });
 })(this);

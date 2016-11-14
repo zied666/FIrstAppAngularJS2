@@ -6,21 +6,24 @@
                 <div class="form-group">
                     <input type="date" class="form-control" (ngModelChange)="onChangeCheckIn($event)" [(ngModel)]="search.checkIn" placeholder="checkIn">
                     <select class="form-control"  [(ngModel)]="search.nuitees" (ngModelChange)="onChange($event)">
-                        <option value="">Nights</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
-                        <option value="1">4</option>
+                        <option value="4">4</option>
                         <option value="5">5</option>
                     </select>
                     <input type="text" class="form-control" (ngModelChange)="onChangeNom($event)" [(ngModel)]="search.nom" placeholder="Search">
-                    <input type="text" class="form-control" (ngModelChange)="onChangeVille($event)" [(ngModel)]="search.ville" placeholder="City">
+                    <input type="text" class="form-control" (ngModelChange)="onChangeVille($event)" [(ngModel)]="search.ville" placeholder="City"
+                           source="http://os-travel.com/api/villes?name=:keyword" ng2-auto-complete
+                           value-property-name="false"
+                           display-property-name="libelle"
+                           min-chars="2" />
                     <select class="form-control" [(ngModel)]="search.etoiles"  (ngModelChange)="onChange($event)">
                         <option value="">Number of stars</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
-                        <option value="1">4</option>
+                        <option value="4">4</option>
                         <option value="5">5</option>
                     </select>
                 </div>

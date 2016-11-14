@@ -16,6 +16,8 @@ import {HotelDetailGeolocationComponent} from "./details/geolocation/hotel.detai
 import {HotelDetailFicheComponent} from "./details/fiche/hotel.detail.fiche.component";
 import {HotelDetailSeasonsComponent} from "./details/saisons/hotel.detail.seasons.component";
 import {HotelListSinglePriceComponent} from "./list/hotel.list.single.price.component";
+import { Ng2AutoCompleteModule } from 'ng2-auto-complete';
+
 
 @NgModule({
     imports: [
@@ -24,6 +26,7 @@ import {HotelListSinglePriceComponent} from "./list/hotel.list.single.price.comp
         HttpModule,
         FormsModule,
         InfiniteScrollModule,
+        Ng2AutoCompleteModule,
         AgmCoreModule.forRoot({
             apiKey: 'AIzaSyBrmGPKzL57yv1rdDGTFMr0Am6pmZ8t898'
         })

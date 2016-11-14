@@ -5,29 +5,26 @@ import {HotelService} from "../hotel.service";
 
 @Component({
     moduleId: module.id,
-    template: '<h3><strong *ngIf="!loading">{{ price }}</strong></h3>',
+    template: '<h4><strong *ngIf="!loading">{{ price }}</strong></h4>',
     selector: 'list-single-hotel-price',
 })
 
 export class HotelListSinglePriceComponent implements OnInit {
     @Input() id: number;
     @Input() search: Search;
-    loading: Boolean;
     price: String;
 
     constructor(private hotelService: HotelService) {
     }
 
     ngOnInit() {
-        this.loading = true;
+        this.price="loading ...";
         this.hotelService.getPrice(this.id, this.search, "2").subscribe(
             (data) => {
                 this.price = data.total + " DT";
-                this.loading = false
             },
             (err) => {
                 this.price = "Erreur";
-                this.loading = false
             },
         );
     }

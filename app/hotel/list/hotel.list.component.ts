@@ -19,7 +19,6 @@ export class HotelListComponent implements OnInit {
     haveMore: Boolean;
     subscribe :Subscription;
 
-
     constructor(private hotelService: HotelService) {
     }
 
