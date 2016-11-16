@@ -12,11 +12,17 @@
                         <option value="4">4</option>
                         <option value="5">5</option>
                     </select>
-                    <input type="text" class="form-control" (ngModelChange)="onChangeNom($event)" [(ngModel)]="search.nom" placeholder="Search">
+                    <input type="text" class="form-control" (ngModelChange)="onChangeNom($event)" [(ngModel)]="search.nom" placeholder="Search"
+                           source="http://os-travel.com/api/nameshotels?name=:keyword" ng2-auto-complete
+                           value-property-name="false"
+                           display-property-name="libelle"
+                           blank-option-text="Clear"
+                           min-chars="2" />
                     <input type="text" class="form-control" (ngModelChange)="onChangeVille($event)" [(ngModel)]="search.ville" placeholder="City"
                            source="http://os-travel.com/api/villes?name=:keyword" ng2-auto-complete
                            value-property-name="false"
                            display-property-name="libelle"
+                           blank-option-text="Clear"
                            min-chars="2" />
                     <select class="form-control" [(ngModel)]="search.etoiles"  (ngModelChange)="onChange($event)">
                         <option value="">Number of stars</option>
