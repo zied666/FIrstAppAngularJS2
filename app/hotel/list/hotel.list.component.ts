@@ -4,6 +4,7 @@ import {Subscription} from "rxjs";
 import {HotelService} from "../hotel.service";
 import {Hotel} from "../object/hotel";
 import {Search} from "../object/search";
+import {Room} from "../object/room";
 
 @Component({
     moduleId: module.id,
@@ -17,15 +18,27 @@ export class HotelListComponent implements OnInit {
     loadingList: Boolean;
     loadingMore: Boolean;
     haveMore: Boolean;
-    subscribe :Subscription;
+    subscribe: Subscription;
+    chambreCount: number;
+    room1: Room;
+    room2: Room;
+    room3: Room;
+    room4: Room;
+    room5: Room;
 
     constructor(private hotelService: HotelService) {
     }
 
 
     ngOnInit() {
-        this.subscribe=null;
-        this.hotels=[];
+        this.room1 = new Room();
+        this.room2 = new Room();
+        this.room3 = new Room();
+        this.room4 = new Room();
+        this.room5 = new Room();
+        this.chambreCount = 1;
+        this.subscribe = null;
+        this.hotels = [];
         this.haveMore = true;
         this.search.checkIn = new Date().toISOString().slice(0, 10).replace(/-/g, "-");
         this.search.limit = 10;
@@ -41,25 +54,22 @@ export class HotelListComponent implements OnInit {
     }
 
 
-    onChangeCheckIn(event)
-    {
-        this.search.checkIn=event;
+    onChangeCheckIn(event) {
+        this.search.checkIn = event;
         this.onChange();
     }
 
-    onChangeVille(event)
-    {
-        this.search.ville=event;
+    onChangeVille(event) {
+        this.search.ville = event;
         this.onChange();
     }
 
-    onChangeNom(event)
-    {
-        this.search.nom=event;
+    onChangeNom(event) {
+        this.search.nom = event;
         this.onChange();
     }
 
-    onChange(event=null) {
+    onChange(event = null) {
         this.loadingList = true;
         this.haveMore = true;
         this.hotels = [];
@@ -68,7 +78,7 @@ export class HotelListComponent implements OnInit {
     }
 
     getHotels() {
-        if(this.subscribe != null)
+        if (this.subscribe != null)
             this.subscribe.unsubscribe();
         this.subscribe = this.hotelService.getHotels(this.search).subscribe(hotels => {
             this.loadingList = false;
@@ -98,5 +108,18 @@ export class HotelListComponent implements OnInit {
         else
             this.search.orderBy = lib;
         this.onChange(null);
+    }
+
+    updateRooms() {
+        let roomsString = "";
+        for (var i = 1; i <= this.chambreCount; i++) {
+            roomsString += this["room" + i].countAdult;
+            for (var j = 1; j <= this["room" + i].countChild; j++) {
+                roomsString += "," + this["room" + i].getAge(j);
+            }
+            roomsString += ";";
+        }
+        roomsString = roomsString.substr(0, roomsString.length - 1);
+        console.log(roomsString);
     }
 }
