@@ -43,8 +43,10 @@ export class LoginComponent implements OnInit {
                 this.router.navigateByUrl('profile');
                 LocalStorageService.setItem("currentUser", response.data);
             }
-            else
+            else{
                 this.error = true;
+                setTimeout(() => this.error = false, 3000);
+            }
             this.loading = false;
         });
     }

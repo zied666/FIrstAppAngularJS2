@@ -8,7 +8,8 @@ import {Hotel, Details} from "./object/hotel";
 
 @Injectable()
 export class HotelService {
-    private heroesUrl = 'http://os-travel.com/api/hotels';  // URL to web api
+    private heroesUrl = 'http://os-travel.com/api/hotels';
+    private heroesPriceUrl = 'http://os-travel.com/api/price';
     constructor(private http: Http) {
     }
 
@@ -34,7 +35,7 @@ export class HotelService {
         params.set('checkIn', search.checkIn);
         params.set('hotel', id);
         params.set('rooms', rooms);
-        return this.http.get("http://os-travel.com/api/price", {search: params})
+        return this.http.get(this.heroesPriceUrl, {search: params})
             .map((res: Response) => res.json())
             .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
     }

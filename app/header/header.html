@@ -15,15 +15,6 @@
                 <li>
                     <a routerLink="/hotel">Hotels</a>
                 </li>
-                <li>
-                    <a routerLink="contact" routerLinkActive="active">Contact</a>
-                </li>
-                <li>
-                    <a routerLink="crisis" routerLinkActive="active">Crisis Center</a>
-                </li>
-                <li>
-                    <a routerLink="heroes" routerLinkActive="active">Heroes</a>
-                </li>
             </ul>
             <ul class="nav navbar-nav" style="float: right;">
                 <li *ngIf="loginService.logedUser == null">
@@ -35,15 +26,6 @@
                 <li *ngIf="loginService.logedUser != null">
                     <a href="javascript:void(0)" (click)="logout()">Logout</a>
                 </li>
-                <!--<li ng-if="!currentUser">
-                    <a href="/login">Sign in</a>
-                </li>
-                <li ng-if="currentUser">
-                    <a href="/profile">Hi {{ currentUser.name }}</a>
-                </li>
-                <li ng-if="currentUser">
-                    <a href="javascript:void(0)" ng-click="logout()">Sign out</a>
-                </li>-->
             </ul>
         </div>
     </div>
