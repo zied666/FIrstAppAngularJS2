@@ -5,7 +5,6 @@ import {BrowserModule}  from '@angular/platform-browser';
 import {AppComponent}   from './app.component';
 
 /* Feature Modules */
-import {ContactModule}    from './contact/contact.module';
 import {CoreModule}       from './core/core.module';
 
 /* Routing Module */
@@ -19,7 +18,6 @@ import {LoginService} from "./login/login.service";
 @NgModule({
     imports: [
         BrowserModule,
-        ContactModule,
         LoginModule,
         CoreModule.forRoot({userName: 'Miss Marple'}),
         AppRoutingModule
