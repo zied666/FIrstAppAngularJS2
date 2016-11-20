@@ -1,5 +1,5 @@
 export class Search {
-   public checkIn: string;
+    checkIn: string;
     limit: number;
     offset: number;
     nuitees: number;
@@ -8,4 +8,5 @@ export class Search {
     orderBy: string;
     ville: string;
     etoiles: string;
+    rooms: string;
 }

@@ -1,5 +1,4 @@
-import {Component, Input, trigger, state, transition, animate, style, OnInit}   from '@angular/core';
-import {Hotel} from "../object/hotel";
+import {Component, Input, OnInit}   from '@angular/core';
 import {Search} from "../object/search";
 import {HotelService} from "../hotel.service";
 
@@ -19,7 +18,7 @@ export class HotelListSinglePriceComponent implements OnInit {
 
     ngOnInit() {
         this.price="loading ...";
-        this.hotelService.getPrice(this.id, this.search, "2").subscribe(
+        this.hotelService.getPrice(this.id, this.search).subscribe(
             (data) => {
                 this.price = data.total + " DT";
             },

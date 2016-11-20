@@ -29,12 +29,12 @@ export class HotelService {
             .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
     }
 
-    getPrice(id, search, rooms): Observable<any> {
+    getPrice(id, search): Observable<any> {
         let params = new URLSearchParams();
         params.set('nuitees', search.nuitees);
         params.set('checkIn', search.checkIn);
         params.set('hotel', id);
-        params.set('rooms', rooms);
+        params.set('rooms', search.rooms);
         return this.http.get(this.heroesPriceUrl, {search: params})
             .map((res: Response) => res.json())
             .catch((error: any) => Observable.throw(error.json().error || 'Server error'));

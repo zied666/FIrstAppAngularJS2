@@ -44,6 +44,7 @@ export class HotelListComponent implements OnInit {
         this.search.limit = 10;
         this.search.offset = 0;
         this.search.nuitees = 1;
+        this.search.rooms = "1";
         this.search.nom = "";
         this.search.order = "ASC";
         this.search.orderBy = "libelle";
@@ -120,6 +121,7 @@ export class HotelListComponent implements OnInit {
             roomsString += ";";
         }
         roomsString = roomsString.substr(0, roomsString.length - 1);
-        console.log(roomsString);
+        this.search.rooms=roomsString;
+        this.onChange();
     }
 }
