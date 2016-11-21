@@ -12,11 +12,12 @@ import {AppRoutingModule} from './app-routing.module';
 import {HeaderComponent} from "./header/header.component";
 import {HomepageComponent} from "./homepage/homepage.component";
 import {LoginModule} from "./login/login.module";
-import {HashLocationStrategy, LocationStrategy} from "@angular/common";
 import {LoginService} from "./login/login.service";
+import {SharedModule} from "./shared/shared.module";
 
 @NgModule({
     imports: [
+        SharedModule,
         BrowserModule,
         LoginModule,
         CoreModule.forRoot({userName: 'Miss Marple'}),
@@ -27,7 +28,7 @@ import {LoginService} from "./login/login.service";
         HomepageComponent,
         HeaderComponent
     ],
-    providers: [{provide: LocationStrategy, useClass: HashLocationStrategy},LoginService],
+    providers: [LoginService],
     bootstrap: [AppComponent, HeaderComponent]
 })
 export class AppModule {

@@ -1,11 +1,8 @@
 import {NgModule}            from '@angular/core';
-
 import {SharedModule}        from '../shared/shared.module';
 import {HotelRoutingModule} from "./hotel-routing.module";
 import {HotelComponent} from "./hotel.component";
 import {HotelService} from "./hotel.service";
-import {HttpModule}    from '@angular/http';
-import {FormsModule} from "@angular/forms";
 import {InfiniteScrollModule} from 'angular2-infinite-scroll';
 import {HotelDetailComponent} from "./details/hotel.detail.component";
 import {HotelListComponent} from "./list/hotel.list.component";
@@ -21,10 +18,8 @@ import { Ng2AutoCompleteModule } from 'ng2-auto-complete';
 
 @NgModule({
     imports: [
-        SharedModule,
         HotelRoutingModule,
-        HttpModule,
-        FormsModule,
+        SharedModule,
         InfiniteScrollModule,
         Ng2AutoCompleteModule,
         AgmCoreModule.forRoot({
