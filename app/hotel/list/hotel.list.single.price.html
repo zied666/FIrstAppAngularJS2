@@ -1,0 +1,26 @@
+<div class="row" *ngIf="!loading">
+    <div class="col-md-12">
+        <hr>
+        <div *ngIf="!error">
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation"  *ngFor="let arrangement of arrangements; let i = index" [ngClass]="{active: i==0}" >
+                    <a href="#tab_{{ arrangement.id }}"  role="tab" data-toggle="tab">
+                        {{ arrangement.libelle }}
+                    </a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div *ngFor="let arrangement of arrangements; let i = index" [ngClass]="{active: i==0}"  class="tab-pane" id="tab_{{ arrangement.id }}">
+                    <div class="row" style="margin: 15px;">
+                        <div class="col-md-12">
+                            {{ arrangement.libelle }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="error">
+            <p>Erreuur !!!!</p>
+        </div>
+    </div>
+</div>
