@@ -1,6 +1,6 @@
 import {Component, Input, trigger, state, transition, animate, style}   from '@angular/core';
-import {Hotel} from "../object/hotel";
-import {Search} from "../object/search";
+import {Hotel} from "../../object/hotel";
+import {Search} from "../../object/search";
 
 @Component({
     moduleId: module.id,

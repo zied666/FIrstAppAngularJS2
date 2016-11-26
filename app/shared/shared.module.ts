@@ -5,11 +5,18 @@ import {FormsModule}         from '@angular/forms';
 import {AwesomePipe}         from './awesome.pipe';
 import {HighlightDirective}  from './highlight.directive';
 import {ShowsignePipe} from "./showsigne.pipe";
+import {PersonsPipe} from "./persons.pipe";
 
 @NgModule({
     imports: [CommonModule],
-    declarations: [AwesomePipe, ShowsignePipe, HighlightDirective],
+    declarations: [
+        AwesomePipe,
+        PersonsPipe,
+        ShowsignePipe,
+        HighlightDirective
+    ],
     exports: [
+        PersonsPipe,
         AwesomePipe,
         ShowsignePipe,
         HighlightDirective,

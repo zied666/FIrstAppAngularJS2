@@ -1,6 +1,5 @@
 import {Component, OnInit}   from '@angular/core';
 import {Subscription} from "rxjs";
-
 import {HotelService} from "../hotel.service";
 import {Hotel} from "../object/hotel";
 import {Search} from "../object/search";

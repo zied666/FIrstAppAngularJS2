@@ -4,18 +4,14 @@
         <div *ngIf="!error">
             <ul class="nav nav-tabs" role="tablist">
                 <li role="presentation"  *ngFor="let arrangement of arrangements; let i = index" [ngClass]="{active: i==0}" >
-                    <a href="#tab_{{ arrangement.id }}"  role="tab" data-toggle="tab">
+                    <a href="#tab_{{id}}_{{ arrangement.id }}"  role="tab" data-toggle="tab">
                         {{ arrangement.libelle }}
                     </a>
                 </li>
             </ul>
             <div class="tab-content">
-                <div *ngFor="let arrangement of arrangements; let i = index" [ngClass]="{active: i==0}"  class="tab-pane" id="tab_{{ arrangement.id }}">
-                    <div class="row" style="margin: 15px;">
-                        <div class="col-md-12">
-                            {{ arrangement.libelle }}
-                        </div>
-                    </div>
+                <div *ngFor="let arrangement of arrangements; let i = index" [ngClass]="{active: i==0}"  class="tab-pane" id="tab_{{id}}_{{ arrangement.id }}">
+                    <list-single-hotel-price-arrangement [id]="id" [search]="search" [arrangement]="arrangement"></list-single-hotel-price-arrangement>
                 </div>
             </div>
         </div>

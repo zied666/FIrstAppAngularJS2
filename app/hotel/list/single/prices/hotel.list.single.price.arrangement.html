@@ -1,0 +1,19 @@
+<div class="row" style="margin: 15px;">
+    <div class="row">
+        <div class="col-md-10">
+            <div class="row">
+                <div class="col-md-2" *ngFor="let room of arrangement.rooms;let i = index">
+                    <h5 style="text-align: center;">[<span [innerHTML]="room.occupation|persons"></span>]</h5>
+                    <div class="list-group">
+                        <a href="javascript:void(0)" *ngFor="let chambre of room.chambres;let j = index" [ngClass]="{active: activeRooms[i]==j}" (click)="updateActiveRooms(i,j)"  class="list-group-item">
+                            {{chambre.libelle}} [{{chambre.data.total}}]
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2" style="margin-top: 100px;">
+            <h1>{{total}} DT</h1>
+        </div>
+    </div>
+</div>
