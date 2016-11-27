@@ -18,7 +18,6 @@
                     <option value="4">4 Rooms</option>
                     <option value="5">5 Rooms</option>
                 </select>
-                <button type="button" class="btn btn-primary"  (click)="updateRooms()">Update Rooms</button>
                 <div *ngIf="chambreCount>=1" style="margin-top: 20px">
                     <strong>Room 1 : </strong>
                     <select class="form-control" name="adults_1" [(ngModel)]="room1.countAdult">
@@ -308,6 +307,12 @@
                         <option value="11">11 Years old</option>
                         <option value="12">12 Years old</option>
                     </select>
+                </div>
+            </div>
+
+            <div class="row" style="margin-bottom: 20px;">
+                <div class="col-md-4 col-md-offset-8">
+                    <button type="button" class="btn btn-primary btn-lg"  (click)="updateRooms()">Search Hotels</button>
                 </div>
             </div>
         </div>

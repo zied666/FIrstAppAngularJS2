@@ -10,13 +10,13 @@
                     <div class="list-group">
                         <span class="label label-danger" *ngIf="room.chambres.length==0">No Rooms available</span>
                         <a href="javascript:void(0)" *ngFor="let chambre of room.chambres;let j = index" [ngClass]="{active: activeRooms[i]==j}" (click)="updateActiveRooms(i,j)"  class="list-group-item">
-                            {{chambre.libelle}} [{{chambre.data.total}}]
+                            {{chambre.libelle}}
                         </a>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-md-2" style="margin-top: 100px;">
+        <div class="col-md-2">
             <h3>{{total}} DT</h3>
             <h5> {{arrangement.libelle}}</h5>
         </div>
