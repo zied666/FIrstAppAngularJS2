@@ -8,8 +8,7 @@ import {Hotel, Details} from "./object/hotel";
 
 @Injectable()
 export class HotelService {
-    private heroesUrl = 'http://os-travel.com/api/hotels';
-    private heroesPriceUrl = 'http://os-travel.com/api/price';
+    private uri="http://os-travel.com/api/";
     constructor(private http: Http) {
     }
 
@@ -24,7 +23,7 @@ export class HotelService {
         params.set('etoile', search.etoiles);
         params.set('orderBy', search.orderBy);
         params.set('order', search.order);
-        return this.http.get(this.heroesUrl, {search: params})
+        return this.http.get(this.uri+"hotels", {search: params})
             .map((res: Response) => res.json())
             .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
     }
@@ -35,19 +34,19 @@ export class HotelService {
         params.set('checkIn', search.checkIn);
         params.set('hotel', id);
         params.set('rooms', search.rooms);
-        return this.http.get(this.heroesPriceUrl, {search: params})
+        return this.http.get(this.uri+"price", {search: params})
             .map((res: Response) => res.json())
             .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
     }
 
     getHotel(id): Observable<Details> {
-        return this.http.get(this.heroesUrl + '/' + id)
+        return this.http.get(this.uri+"hotels" + '/' + id)
             .map((res: Response) => res.json())
             .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
     }
 
     getSaisons(id): Observable<Object[]> {
-        return this.http.get(this.heroesUrl + '/' + id + '/saisons')
+        return this.http.get(this.uri+"hotels" + '/' + id + '/saisons')
             .map((res: Response) => res.json())
             .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
     }

@@ -17,9 +17,11 @@ export class HotelListSinglePriceArrangementComponent implements OnInit {
         let k=0;
         for (let room of  this.arrangement.rooms) {
             this.activeRooms[k]=0;
-            this.total += room.chambres[0].data.total;
+            if(room.chambres.length>0)
+                this.total += room.chambres[0].data.total;
             k++;
         }
+        this.total=Number(this.total.toFixed(3));
     }
     updateActiveRooms(i,j)
     {
@@ -27,8 +29,10 @@ export class HotelListSinglePriceArrangementComponent implements OnInit {
         this.total=0;
         let k=0;
         for (let room of  this.arrangement.rooms) {
-            this.total += room.chambres[this.activeRooms[k]].data.total;
+            if(room.chambres.length>0)
+                this.total += room.chambres[this.activeRooms[k]].data.total;
             k++;
         }
+        this.total=Number(this.total.toFixed(3));
     }
 }
