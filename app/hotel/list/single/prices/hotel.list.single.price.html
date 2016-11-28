@@ -1,6 +1,10 @@
+<div class="row" *ngIf="loading">
+    <div class="col-md-12">
+        <p class="text-center">Loading Price ...</p>
+    </div>
+</div>
 <div class="row" *ngIf="!loading">
     <div class="col-md-12">
-        <hr>
         <div *ngIf="!error">
             <ul class="nav nav-tabs" role="tablist">
                 <li role="presentation"  *ngFor="let arrangement of arrangements; let i = index" [ngClass]="{active: i==0}" >

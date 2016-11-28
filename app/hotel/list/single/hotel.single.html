@@ -8,12 +8,12 @@
                     <span style="float: right"><small>{{hotel.details.ville.libelle }} - {{hotel.details.categorie.libelle }}</small></span>
                 </h4>
                 <div [innerHTML]="hotel.details.description_courte"></div>
-                <span *ngFor="let tag of hotel.details.tags"> #{{tag.libelle}} </span>
             </div>
             <div class="col-md-2" style="    margin-top: 30px;">
                 <p><a routerLink="{{hotel.details.id}}" class="btn btn-primary" role="button">More Détails</a></p>
             </div>
         </div>
+        <hr>
         <list-single-hotel-price [id]="hotel.details.id" [search]="search"></list-single-hotel-price>
     </div>
 </div>
