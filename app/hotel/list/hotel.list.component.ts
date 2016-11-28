@@ -4,6 +4,8 @@ import {HotelService} from "../hotel.service";
 import {Hotel} from "../object/hotel";
 import {Search} from "../object/search";
 import {Room} from "../object/room";
+import {TranslateService} from "ng2-translate";
+import {LocalStorageService} from "../../core/localStorage.service";
 
 @Component({
     moduleId: module.id,
@@ -25,7 +27,8 @@ export class HotelListComponent implements OnInit {
     room4: Room;
     room5: Room;
 
-    constructor(private hotelService: HotelService) {
+    constructor(private hotelService: HotelService,private translate: TranslateService) {
+        this.translate.use(LocalStorageService.getItem('locale'));
     }
 
 

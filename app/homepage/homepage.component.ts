@@ -6,6 +6,4 @@ import {TranslateService} from "ng2-translate";
     templateUrl:"homepage.html"
 })
 export class HomepageComponent {
-    constructor(private translate: TranslateService) {
-    }
 }

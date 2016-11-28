@@ -1,7 +1,5 @@
 import {NgModule}       from '@angular/core';
 import {BrowserModule}  from '@angular/platform-browser';
-import {TranslateModule} from "ng2-translate";
-
 /* App Root */
 import {AppComponent}   from './app.component';
 

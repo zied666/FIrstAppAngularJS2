@@ -1,5 +1,29 @@
 {
+  "MENU": {
+    "HOMEPAGE": "Homepage",
+    "HOTELS": "Hotels",
+    "LOGIN": "Login",
+    "LOGOUT": "Logout",
+    "HI": "Hi"
+  },
   "HOME": {
-    "TITLE": "Dashboard"
+    "TITLE": "Homepage"
+  },
+  "HOTELS": {
+    "ROOMS": "Rooms",
+    "SEARCH_HOTELS": "Search Hotels",
+    "ROOM": "Room",
+    "NAMES": "Names",
+    "STARS": "Stars",
+    "CITIES": "Cities",
+    "SEARCH": "Search",
+    "CITY": "City",
+    "NUMBER_OF_STARS": "Number of stars",
+    "MORE_DETAILS": "More Details",
+    "ADULT": "Adult",
+    "ADULTS": "Adults",
+    "CHILD": "Child",
+    "CHILDS": "Childs",
+    "YEARS_OLD": "Years old"
   }
 }

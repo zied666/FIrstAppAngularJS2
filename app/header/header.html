@@ -8,23 +8,35 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" routerLink="">Angular JS 2</a>
+            <a class="navbar-brand" routerLink="/">Angular JS 2</a>
         </div>
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <div class="collapse navbar-collapse dropdown" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav ">
                 <li>
-                    <a routerLink="/hotel">Hotels</a>
+                    <a routerLink="/">{{"MENU.HOMEPAGE"|translate}}</a>
+                </li>
+                <li>
+                    <a routerLink="/hotel">{{"MENU.HOTELS"|translate}}</a>
                 </li>
             </ul>
             <ul class="nav navbar-nav" style="float: right;">
                 <li *ngIf="loginService.logedUser == null">
-                    <a routerLink="login" routerLinkActive="active">Login</a>
+                    <a routerLink="login" routerLinkActive="active">{{"MENU.LOGIN"|translate}}</a>
                 </li>
                 <li *ngIf="loginService.logedUser != null">
-                    <a routerLink="profile" routerLinkActive="active">Hi {{loginService.logedUser.nom}} {{loginService.logedUser.prenom}}</a>
+                    <a routerLink="profile" routerLinkActive="active">{{"MENU.HI"|translate}} {{loginService.logedUser.nom}} {{loginService.logedUser.prenom}}</a>
                 </li>
                 <li *ngIf="loginService.logedUser != null">
-                    <a href="javascript:void(0)" (click)="logout()">Logout</a>
+                    <a href="javascript:void(0)" (click)="logout()">{{"MENU.LOGOUT"|translate}}</a>
+                </li>
+
+                <li>
+                    <a href="javascript:void(0)" id="drop6" data-toggle="dropdown" class="dropdown-toggle">{{translate.currentLang.toUpperCase()}}<span class="caret"></span></a>
+                    <ul  class="dropdown-menu">
+                        <li *ngFor="let lang of translate.getLangs()" [ngClass]="{'active': translate.currentLang==lang}">
+                            <a (click)="changeTranlsation(lang)" href="javascript:void(0)">{{lang.toUpperCase()}}</a>
+                        </li>
+                    </ul>
                 </li>
             </ul>
         </div>

@@ -1,5 +1,29 @@
 {
+  "MENU": {
+    "HOMEPAGE": "Accueil",
+    "HOTELS": "Hotels",
+    "LOGIN": "Connexion",
+    "LOGOUT": "Déconnexion",
+    "HI": "Bonjour"
+  },
   "HOME": {
-    "TITLE": "Tableau de bord"
+    "TITLE": "Accueil"
+  },
+  "HOTELS": {
+    "ROOMS": "Chambres",
+    "SEARCH_HOTELS": "Recherche Hôtels",
+    "ROOM": "Chambre",
+    "NAMES": "Noms",
+    "STARS": "Etoiles",
+    "CITIES": "Villes",
+    "SEARCH": "Recherche",
+    "CITY": "Ville",
+    "NUMBER_OF_STARS": "Nuombre d'étoiles ",
+    "MORE_DETAILS": "Plus de Details",
+    "ADULT": "Adulte",
+    "ADULTS": "Adultes",
+    "CHILD": "Enfant",
+    "CHILDS": "ChildEnfants",
+    "YEARS_OLD": "Ans"
   }
 }
