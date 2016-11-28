@@ -1,22 +1,22 @@
 <h1>Login Form</h1>
-<div [@errorMessage]="!error" style="padding: 10px;margin-bottom: 20px;" class="alet alert-danger"> Invalid  login or password  </div>
+<div [@errorMessage]="!error"  class="alert alert-danger" role="alert">
+    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+    <span class="sr-only">Error:</span>
+    Invalid  login or password
+</div>
 <form [hidden]="confirmed" (ngSubmit)="onSubmit()" #loginForm="ngForm">
-
     <div class="form-group">
         <label>Email address</label>
         <input type="email" [(ngModel)]="login" required name="login" class="form-control"  #email="ngModel">
         <div [@errorMessage]="email.valid || email.pristine" class="text-danger">  Email is required </div>
     </div>
-
     <div class="form-group">
         <label>Password</label>
         <input type="password" [(ngModel)]="password" required name="password" class="form-control"  #pwd="ngModel">
         <div [@errorMessage]="pwd.valid || pwd.pristine" class="text-danger"> Password is required </div>
     </div>
-
     <button type="submit" class="btn btn-default" [disabled]="!loginForm.form.valid || loading">
         <span *ngIf="loading">Loading ...</span>
         <span *ngIf="!loading">Submit</span>
     </button>
-
 </form>

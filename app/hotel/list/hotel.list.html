@@ -368,22 +368,22 @@
                 <li ngClass="{'active':search.orderBy=='libelle'}">
                     <a href="javascript:void(0)" (click)=" updateSort('libelle');">
                         Names
-                        <span *ngIf="search.order=='DESC' && search.orderBy=='libelle'">&uarr;</span>
-                        <span *ngIf="search.order=='ASC' && search.orderBy=='libelle'">&darr;</span>
+                        <span *ngIf="search.order=='DESC' && search.orderBy=='libelle'" class="glyphicon glyphicon-sort-by-alphabet-alt"></span>
+                        <span *ngIf="search.order=='ASC' && search.orderBy=='libelle'" class="glyphicon glyphicon-sort-by-alphabet"></span>
                     </a>
                 </li>
                 <li ngClass="{'active':search.orderBy=='categorie'}">
                     <a href="javascript:void(0)" (click)=" updateSort('categorie');">
                         Stars
-                        <span *ngIf="search.order=='DESC' && search.orderBy=='categorie'">&uarr;</span>
-                        <span *ngIf="search.order=='ASC' && search.orderBy=='categorie'">&darr;</span>
+                        <span *ngIf="search.order=='DESC' && search.orderBy=='categorie'" class="glyphicon glyphicon-sort-by-order-alt"></span>
+                        <span *ngIf="search.order=='ASC' && search.orderBy=='categorie'" class="glyphicon glyphicon-sort-by-order"></span>
                     </a>
                 </li>
                 <li ngClass="{'active':search.orderBy=='ville'}">
                     <a href="javascript:void(0)" (click)=" updateSort('ville');">
                         Cities
-                        <span *ngIf="search.order=='DESC' && search.orderBy=='ville'">&uarr;</span>
-                        <span *ngIf="search.order=='ASC' && search.orderBy=='ville'">&darr;</span>
+                        <span *ngIf="search.order=='DESC' && search.orderBy=='ville'" class="glyphicon glyphicon-sort-by-alphabet-alt"></span>
+                        <span *ngIf="search.order=='ASC' && search.orderBy=='ville'" class="glyphicon glyphicon-sort-by-alphabet"></span>
                     </a>
                 </li>
             </ul>

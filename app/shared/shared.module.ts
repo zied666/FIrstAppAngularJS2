@@ -6,9 +6,13 @@ import {AwesomePipe}         from './awesome.pipe';
 import {HighlightDirective}  from './highlight.directive';
 import {ShowsignePipe} from "./showsigne.pipe";
 import {PersonsPipe} from "./persons.pipe";
+import {TranslateModule} from "ng2-translate";
 
 @NgModule({
-    imports: [CommonModule],
+    imports: [
+        CommonModule,
+        TranslateModule.forRoot(),
+    ],
     declarations: [
         AwesomePipe,
         PersonsPipe,
@@ -21,7 +25,8 @@ import {PersonsPipe} from "./persons.pipe";
         ShowsignePipe,
         HighlightDirective,
         CommonModule,
-        FormsModule
+        FormsModule,
+        TranslateModule
     ]
 })
 export class SharedModule {

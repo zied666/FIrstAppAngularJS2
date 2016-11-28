@@ -28,6 +28,7 @@ export class ProfileComponent implements OnInit {
         this.success=true;
         this.loginService.logedUser = Object.assign({}, this.logedUser);
         LocalStorageService.setItem("currentUser",this.logedUser);
+        setTimeout(() => this.success = false, 3000);
     }
 
 
