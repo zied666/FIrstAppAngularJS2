@@ -25,5 +25,8 @@
     "CHILD": "Enfant",
     "CHILDS": "ChildEnfants",
     "YEARS_OLD": "Ans"
+  },
+  "PROFILE": {
+    "TITLE": "Mon Profile"
   }
 }

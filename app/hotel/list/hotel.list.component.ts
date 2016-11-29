@@ -27,8 +27,7 @@ export class HotelListComponent implements OnInit {
     room4: Room;
     room5: Room;
 
-    constructor(private hotelService: HotelService,private translate: TranslateService) {
-        this.translate.use(LocalStorageService.getItem('locale'));
+    constructor(private hotelService: HotelService) {
     }
 
 
