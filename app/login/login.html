@@ -1,9 +1,5 @@
 <h1>{{"PROFILE.TITLE"|translate}}</h1>
-<div [@errorMessage]="!error"  class="alert alert-danger" role="alert">
-    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-    <span class="sr-only">{{"PROFILE.ERROR"|translate}}:</span>
-    {{"PROFILE.INVALID_FORM"|translate}}
-</div>
+<alert class="danger" [view]="error" text="PROFILE.ERROR"></alert>
 <form [hidden]="confirmed" (ngSubmit)="onSubmit()" #loginForm="ngForm">
     <div class="form-group">
         <label>{{"PROFILE.EMAIL"|translate}}</label>

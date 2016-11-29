@@ -10,7 +10,6 @@ export const routes: Routes = [
     {path: '', component: HomepageComponent},
     {path: 'hotel', component: HotelListComponent},
     {path: 'hotel/:id', component: HotelDetailComponent},
-    //{path: 'hotel', loadChildren: 'app/hotel/hotel.module#HotelModule'},
     {path: 'login', component: LoginComponent},
     {path: 'profile', component: ProfileComponent}
 ];

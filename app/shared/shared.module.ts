@@ -1,12 +1,13 @@
 import {NgModule}            from '@angular/core';
 import {CommonModule}        from '@angular/common';
 import {FormsModule}         from '@angular/forms';
-
-import {AwesomePipe}         from './awesome.pipe';
-import {HighlightDirective}  from './highlight.directive';
-import {ShowsignePipe} from "./showsigne.pipe";
-import {PersonsPipe} from "./persons.pipe";
 import {TranslateModule} from "ng2-translate";
+import {AwesomePipe} from "./pipes/awesome.pipe";
+import {PersonsPipe} from "./pipes/persons.pipe";
+import {ShowsignePipe} from "./pipes/showsigne.pipe";
+import {HighlightDirective} from "./directives/highlight.directive";
+import {LoadingComponent} from "./components/loading.component";
+import {AlertComponent} from "./components/alert.component";
 
 @NgModule({
     imports: [
@@ -17,7 +18,9 @@ import {TranslateModule} from "ng2-translate";
         AwesomePipe,
         PersonsPipe,
         ShowsignePipe,
-        HighlightDirective
+        HighlightDirective,
+        LoadingComponent,
+        AlertComponent
     ],
     exports: [
         PersonsPipe,
@@ -26,7 +29,9 @@ import {TranslateModule} from "ng2-translate";
         HighlightDirective,
         CommonModule,
         FormsModule,
-        TranslateModule
+        TranslateModule,
+        LoadingComponent,
+        AlertComponent
     ]
 })
 export class SharedModule {

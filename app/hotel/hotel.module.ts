@@ -4,7 +4,6 @@ import {HotelService} from "./hotel.service";
 import {InfiniteScrollModule} from 'angular2-infinite-scroll';
 import {HotelDetailComponent} from "./details/hotel.detail.component";
 import {HotelListComponent} from "./list/hotel.list.component";
-import {LoadingComponent} from "../header/loading.component";
 import { AgmCoreModule } from 'angular2-google-maps/core';
 import {HotelDetailGeolocationComponent} from "./details/geolocation/hotel.detail.geolocation.component";
 import {HotelDetailFicheComponent} from "./details/fiche/hotel.detail.fiche.component";
@@ -18,7 +17,6 @@ import {AppRoutingModule} from "../app-routing.module";
 
 @NgModule({
     imports: [
-        //HotelRoutingModule,
         AppRoutingModule,
         SharedModule,
         InfiniteScrollModule,
@@ -28,7 +26,6 @@ import {AppRoutingModule} from "../app-routing.module";
         })
     ],
     declarations: [
-        //HotelComponent,
         HotelListComponent,
         HotelListSingleComponent,
         HotelListSinglePriceComponent,
@@ -37,7 +34,6 @@ import {AppRoutingModule} from "../app-routing.module";
         HotelDetailGeolocationComponent,
         HotelDetailFicheComponent,
         HotelDetailSeasonsComponent,
-        LoadingComponent
     ],
     providers: [HotelService]
 })
