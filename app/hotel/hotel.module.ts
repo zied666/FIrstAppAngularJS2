@@ -1,7 +1,5 @@
 import {NgModule}            from '@angular/core';
 import {SharedModule}        from '../shared/shared.module';
-import {HotelRoutingModule} from "./hotel-routing.module";
-import {HotelComponent} from "./hotel.component";
 import {HotelService} from "./hotel.service";
 import {InfiniteScrollModule} from 'angular2-infinite-scroll';
 import {HotelDetailComponent} from "./details/hotel.detail.component";
@@ -15,11 +13,13 @@ import { Ng2AutoCompleteModule } from 'ng2-auto-complete';
 import {HotelListSingleComponent} from "./list/single/hotel.list.single.component";
 import {HotelListSinglePriceComponent} from "./list/single/prices/hotel.list.single.price.component";
 import {HotelListSinglePriceArrangementComponent} from "./list/single/prices/hotel.list.single.price.arrangement.component";
+import {AppRoutingModule} from "../app-routing.module";
 
 
 @NgModule({
     imports: [
-        HotelRoutingModule,
+        //HotelRoutingModule,
+        AppRoutingModule,
         SharedModule,
         InfiniteScrollModule,
         Ng2AutoCompleteModule,
@@ -28,7 +28,7 @@ import {HotelListSinglePriceArrangementComponent} from "./list/single/prices/hot
         })
     ],
     declarations: [
-        HotelComponent,
+        //HotelComponent,
         HotelListComponent,
         HotelListSingleComponent,
         HotelListSinglePriceComponent,

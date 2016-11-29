@@ -13,10 +13,12 @@ import {HomepageComponent} from "./homepage/homepage.component";
 import {LoginModule} from "./login/login.module";
 import {LoginService} from "./login/login.service";
 import {SharedModule} from "./shared/shared.module";
+import {HotelModule} from "./hotel/hotel.module";
 
 @NgModule({
     imports: [
         SharedModule,
+        HotelModule,
         BrowserModule,
         LoginModule,
         CoreModule.forRoot({userName: 'Miss Marple'}),
