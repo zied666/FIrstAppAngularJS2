@@ -35,7 +35,7 @@
     "PASSWORD_REQUIRED": "Mot de passe est obligatoire",
     "PASSWORD": "Mot de passe",
     "LOADING": "Chargement",
-    "INVALID_FORM": "Mot de passe ou email sont invalides ",
+    "INVALID_FORM": "Mot de passe ou email est invalide",
     "ERROR": "Erreur",
     "SUBMIT": "Se Connecter",
     "NOM": "Nom",

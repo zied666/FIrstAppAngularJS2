@@ -1,5 +1,5 @@
 <h1>{{"PROFILE.TITLE"|translate}}</h1>
-<alert class="danger" [view]="error" text="PROFILE.ERROR"></alert>
+<alert class="danger" [view]="error" text="PROFILE.INVALID_FORM"></alert>
 <form [hidden]="confirmed" (ngSubmit)="onSubmit()" #loginForm="ngForm">
     <div class="form-group">
         <label>{{"PROFILE.EMAIL"|translate}}</label>
