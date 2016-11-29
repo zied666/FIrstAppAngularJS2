@@ -14,6 +14,7 @@ import {LoginModule} from "./login/login.module";
 import {LoginService} from "./login/login.service";
 import {SharedModule} from "./shared/shared.module";
 import {HotelModule} from "./hotel/hotel.module";
+import {HashLocationStrategy, LocationStrategy} from "@angular/common";
 
 @NgModule({
     imports: [
@@ -29,7 +30,7 @@ import {HotelModule} from "./hotel/hotel.module";
         HomepageComponent,
         HeaderComponent
     ],
-    providers: [LoginService],
+    providers: [{provide: LocationStrategy, useClass: HashLocationStrategy},LoginService], //this ti make refresh on browsers
     bootstrap: [AppComponent, HeaderComponent]
 })
 export class AppModule {
