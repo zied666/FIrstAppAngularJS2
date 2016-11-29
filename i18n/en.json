@@ -24,9 +24,27 @@
     "ADULTS": "Adults",
     "CHILD": "Child",
     "CHILDS": "Childs",
-    "YEARS_OLD": "Years old"
+    "YEARS_OLD": "Years old",
+    "NO_AVAILABLE": "No hotels available",
+    "ROOMS_NO_AVAILABLE": "No Rooms available"
   },
-  "PROFILE":{
-    "TITLE":"My Profil"
+  "PROFILE": {
+    "TITLE": "My Profil",
+    "EMAIL": "Email address",
+    "EMAIL_REQUIRED": "Email is required",
+    "PASSWORD_REQUIRED": "Password is required ",
+    "PASSWORD": "Password",
+    "LOADING": "Loading",
+    "INVALID_FORM": "Invalid  login or password",
+    "ERROR": "Error",
+    "SUBMIT": "Submit",
+    "NOM": "First Name",
+    "PRENOM": "Last Name",
+    "PHONE": "Phone",
+    "UPDATE": "Update",
+    "VALID_FORM": "Your data has been updated successfully",
+    "PHONE_REQUIRED": " Phone is required",
+    "NOM_REQUIRED": " First Name is required",
+    "PRENOM_REQUIRED": " Last Name is required"
   }
 }

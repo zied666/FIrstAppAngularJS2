@@ -24,9 +24,27 @@
     "ADULTS": "Adultes",
     "CHILD": "Enfant",
     "CHILDS": "ChildEnfants",
-    "YEARS_OLD": "Ans"
+    "YEARS_OLD": "Ans",
+    "NO_AVAILABLE": "Pas d'hôtels disponible",
+    "ROOMS_NO_AVAILABLE": "Pas de chambre disponible"
   },
   "PROFILE": {
-    "TITLE": "Mon Profile"
+    "TITLE": "Mon Profile",
+    "EMAIL": "Adresse Email",
+    "EMAIL_REQUIRED": "Email est obligatoire",
+    "PASSWORD_REQUIRED": "Mot de passe est obligatoire",
+    "PASSWORD": "Mot de passe",
+    "LOADING": "Chargement",
+    "INVALID_FORM": "Mot de passe ou email sont invalides ",
+    "ERROR": "Erreur",
+    "SUBMIT": "Se Connecter",
+    "NOM": "Nom",
+    "PRENOM": "Prénom",
+    "PHONE": "Téléphone Mobile",
+    "UPDATE": "Mise à jour",
+    "VALID_FORM": "Vos données ont été mises à jour avec succès",
+    "PHONE_REQUIRED": "Téléphone obligatoire ",
+    "NOM_REQUIRED": "Nom obligatoire ",
+    "PRENOM_REQUIRED": "Prénom obligatoire "
   }
 }

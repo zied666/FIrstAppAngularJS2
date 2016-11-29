@@ -1,22 +1,22 @@
 <h1>{{"PROFILE.TITLE"|translate}}</h1>
 <div [@errorMessage]="!error"  class="alert alert-danger" role="alert">
     <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-    <span class="sr-only">Error:</span>
-    Invalid  login or password
+    <span class="sr-only">{{"PROFILE.ERROR"|translate}}:</span>
+    {{"PROFILE.INVALID_FORM"|translate}}
 </div>
 <form [hidden]="confirmed" (ngSubmit)="onSubmit()" #loginForm="ngForm">
     <div class="form-group">
-        <label>Email address</label>
+        <label>{{"PROFILE.EMAIL"|translate}}</label>
         <input type="email" [(ngModel)]="login" required name="login" class="form-control"  #email="ngModel">
-        <div [@errorMessage]="email.valid || email.pristine" class="text-danger">  Email is required </div>
+        <div [@errorMessage]="email.valid || email.pristine" class="text-danger">{{"PROFILE.EMAIL_REQUIRED"|translate}}</div>
     </div>
     <div class="form-group">
-        <label>Password</label>
+        <label>{{"PROFILE.PASSWORD"|translate}}</label>
         <input type="password" [(ngModel)]="password" required name="password" class="form-control"  #pwd="ngModel">
-        <div [@errorMessage]="pwd.valid || pwd.pristine" class="text-danger"> Password is required </div>
+        <div [@errorMessage]="pwd.valid || pwd.pristine" class="text-danger">{{"PROFILE.PASSWORD_REQUIRED"|translate}}</div>
     </div>
     <button type="submit" class="btn btn-default" [disabled]="!loginForm.form.valid || loading">
-        <span *ngIf="loading">Loading ...</span>
-        <span *ngIf="!loading">Submit</span>
+        <span *ngIf="loading">{{"PROFILE.LOADING"|translate}} ...</span>
+        <span *ngIf="!loading">{{"PROFILE.SUBMIT"|translate}}</span>
     </button>
 </form>

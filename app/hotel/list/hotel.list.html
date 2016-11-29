@@ -19,7 +19,7 @@
                     <option value="5">5 {{"HOTELS.ROOMS"|translate}}</option>
                 </select>
                 <div *ngIf="chambreCount>=1" style="margin-top: 20px">
-                    <strong>Room 1 : </strong>
+                    <strong>{{"HOTELS.ROOM"|translate}} 1 : </strong>
                     <select class="form-control" name="adults_1" [(ngModel)]="room1.countAdult">
                         <option value="1">1 {{"HOTELS.ADULT"|translate}}</option>
                         <option value="2">2 {{"HOTELS.ADULTS"|translate}}</option>
@@ -77,7 +77,7 @@
                     </select>
                 </div>
                 <div *ngIf="chambreCount>=2" style="margin-top: 20px">
-                    <strong>Room 2 : </strong>
+                    <strong>{{"HOTELS.ROOM"|translate}} 2 : </strong>
                     <select class="form-control" name="adults_2" [(ngModel)]="room2.countAdult">
                         <option value="1">1 {{"HOTELS.ADULT"|translate}}</option>
                         <option value="2">2 {{"HOTELS.ADULTS"|translate}}</option>
@@ -135,7 +135,7 @@
                     </select>
                 </div>
                 <div *ngIf="chambreCount>=3" style="margin-top: 20px">
-                    <strong>Room 3 : </strong>
+                    <strong>{{"HOTELS.ROOM"|translate}} 3 : </strong>
                     <select class="form-control" name="adults_3" [(ngModel)]="room3.countAdult">
                         <option value="1">1 {{"HOTELS.ADULT"|translate}}</option>
                         <option value="2">2 {{"HOTELS.ADULTS"|translate}}</option>
@@ -193,7 +193,7 @@
                     </select>
                 </div>
                 <div *ngIf="chambreCount>=4" style="margin-top: 20px">
-                    <strong>Room 4 : </strong>
+                    <strong>{{"HOTELS.ROOM"|translate}} 4 : </strong>
                     <select class="form-control" name="adults_4" [(ngModel)]="room4.countAdult">
                         <option value="1">1 {{"HOTELS.ADULT"|translate}}</option>
                         <option value="2">2 {{"HOTELS.ADULTS"|translate}}</option>
@@ -251,7 +251,7 @@
                     </select>
                 </div>
                 <div *ngIf="chambreCount>=5" style="margin-top: 20px">
-                    <strong>Room 5 : </strong>
+                    <strong>{{"HOTELS.ROOM"|translate}} 5 : </strong>
                     <select class="form-control" name="adults_5" [(ngModel)]="room5.countAdult">
                         <option value="1">1 {{"HOTELS.ADULT"|translate}}</option>
                         <option value="2">2 {{"HOTELS.ADULTS"|translate}}</option>
@@ -312,7 +312,7 @@
 
             <div class="row" style="margin-bottom: 20px;">
                 <div class="col-md-4 col-md-offset-8">
-                    <button type="button" class="btn btn-primary btn-lg"  (click)="updateRooms()">Search Hotels</button>
+                    <button type="button" class="btn btn-primary btn-lg"  (click)="updateRooms()">{{"HOTELS.SEARCH_HOTELS"|translate}}</button>
                 </div>
             </div>
         </div>
@@ -341,21 +341,21 @@
                         <option value="5">5</option>
                     </select>
                     <input type="text" class="form-control" (ngModelChange)="onChangeNom($event)" name="searchName"
-                           [(ngModel)]="search.nom" placeholder="Search"
+                       [(ngModel)]="search.nom" placeholder="{{'HOTELS.SEARCH'|translate}}"
                            source="http://os-travel.com/api/nameshotels?name=:keyword" ng2-auto-complete
                            value-property-name="false"
                            display-property-name="libelle"
                            blank-option-text="Clear"
                            min-chars="2"/>
-                    <input type="text" class="form-control" (ngModelChange)="onChangeVille($event)" name="searchVille"
-                           [(ngModel)]="search.ville" placeholder="City"
+                    <input type="text" class="form-control" (ngModelChange)="onChangeVille($event)" name="city"
+                           [(ngModel)]="search.ville" placeholder="{{'HOTELS.CITY'|translate}}"
                            source="http://os-travel.com/api/villes?name=:keyword" ng2-auto-complete
                            value-property-name="false"
                            display-property-name="libelle"
                            blank-option-text="Clear"
                            min-chars="2"/>
-                    <select class="form-control" [(ngModel)]="search.etoiles" (ngModelChange)="onChange($event)" name="searchEtoiles">
-                        <option value="">Number of stars</option>
+                    <select class="form-control" [(ngModel)]="search.etoiles" (ngModelChange)="onChange($event)" name="stars">
+                        <option value="">{{'HOTELS.NUMBER_OF_STARS'|translate}}</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
@@ -367,21 +367,21 @@
             <ul class="nav navbar-nav navbar-right">
                 <li ngClass="{'active':search.orderBy=='libelle'}">
                     <a href="javascript:void(0)" (click)=" updateSort('libelle');">
-                        Names
+                        {{'HOTELS.NAMES'|translate}}
                         <span *ngIf="search.order=='DESC' && search.orderBy=='libelle'" class="glyphicon glyphicon-sort-by-alphabet-alt"></span>
                         <span *ngIf="search.order=='ASC' && search.orderBy=='libelle'" class="glyphicon glyphicon-sort-by-alphabet"></span>
                     </a>
                 </li>
                 <li ngClass="{'active':search.orderBy=='categorie'}">
                     <a href="javascript:void(0)" (click)=" updateSort('categorie');">
-                        Stars
+                        {{'HOTELS.STARS'|translate}}
                         <span *ngIf="search.order=='DESC' && search.orderBy=='categorie'" class="glyphicon glyphicon-sort-by-order-alt"></span>
                         <span *ngIf="search.order=='ASC' && search.orderBy=='categorie'" class="glyphicon glyphicon-sort-by-order"></span>
                     </a>
                 </li>
                 <li ngClass="{'active':search.orderBy=='ville'}">
                     <a href="javascript:void(0)" (click)=" updateSort('ville');">
-                        Cities
+                        {{'HOTELS.CITIES'|translate}}
                         <span *ngIf="search.order=='DESC' && search.orderBy=='ville'" class="glyphicon glyphicon-sort-by-alphabet-alt"></span>
                         <span *ngIf="search.order=='ASC' && search.orderBy=='ville'" class="glyphicon glyphicon-sort-by-alphabet"></span>
                     </a>
@@ -391,7 +391,7 @@
     </div>
 </nav>
 <loading *ngIf="loadingList"></loading>
-<p *ngIf="!loadingList && hotels.length ==0" class="bg-warning">No hotels available</p>
+<p *ngIf="!loadingList && hotels.length ==0" class="bg-warning">{{"HOTELS.NO_AVAILABLE"|translate}}</p>
 <div class="col-md-12 " *ngFor="let hotel of hotels">
     <list-single-hotel [hotel]="hotel" [search]="search"></list-single-hotel>
 </div>
