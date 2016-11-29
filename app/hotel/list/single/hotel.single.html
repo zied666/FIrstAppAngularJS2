@@ -13,7 +13,7 @@
                 <p><a routerLink="/hotel/{{hotel.details.id}}" class="btn btn-primary" role="button">{{"HOTELS.MORE_DETAILS"|translate}}</a></p>
             </div>
         </div>
-        <hr>
+        <hr style="border: 1px solid gray;">
         <list-single-hotel-price [id]="hotel.details.id" [search]="search"></list-single-hotel-price>
     </div>
 </div>
