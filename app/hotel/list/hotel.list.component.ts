@@ -12,6 +12,7 @@ import {Room} from "../object/room";
 
 export class HotelListComponent implements OnInit {
 
+    countHotels:number=null;
     hotels: Hotel[];
     search = new Search();
     loadingList: Boolean;
@@ -51,22 +52,20 @@ export class HotelListComponent implements OnInit {
         this.search.etoiles = "";
         this.loadingList = true;
         this.getHotels();
+        this.updateCountHotels();
     }
 
 
     onChangeCheckIn(event) {
         this.search.checkIn = event;
-        this.onChange();
     }
 
     onChangeVille(event) {
         this.search.ville = event;
-        this.onChange();
     }
 
     onChangeNom(event) {
         this.search.nom = event;
-        this.onChange();
     }
 
     onChange(event = null) {
@@ -75,6 +74,14 @@ export class HotelListComponent implements OnInit {
         this.hotels = [];
         this.search.offset = 0;
         this.getHotels();
+        this.updateCountHotels();
+    }
+
+    updateCountHotels(){
+        this.countHotels=null;
+        this.hotelService.getCount(this.search).subscribe(count => {
+            this.countHotels=count;
+        });
     }
 
     getHotels() {

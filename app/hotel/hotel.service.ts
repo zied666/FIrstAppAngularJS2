@@ -28,6 +28,20 @@ export class HotelService {
             .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
     }
 
+    getCount(search): Observable<number> {
+        let params = new URLSearchParams();
+        params.set('nuitees', search.nuitees);
+        params.set('checkIn', search.checkIn);
+        params.set('search', search.nom);
+        params.set('ville', search.ville);
+        params.set('etoile', search.etoiles);
+        params.set('orderBy', search.orderBy);
+        params.set('order', search.order);
+        return this.http.get(this.uri+"hotelscount", {search: params})
+            .map((res: Response) => res.json())
+            .catch((error: any) => Observable.throw(error.json().error || 'Server error'));
+    }
+
     getPrice(id, search): Observable<any> {
         let params = new URLSearchParams();
         params.set('nuitees', search.nuitees);

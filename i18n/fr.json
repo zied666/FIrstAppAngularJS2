@@ -11,6 +11,8 @@
   },
   "HOTELS": {
     "ROOMS": "Chambres",
+    "LIST": "Liste des hôtels",
+    "FOUNDDED": "Hôtel(s) trouvé(s)",
     "SEARCH_HOTELS": "Recherche Hôtels",
     "ROOM": "Chambre",
     "NAMES": "Noms",
@@ -18,7 +20,7 @@
     "CITIES": "Villes",
     "SEARCH": "Recherche",
     "CITY": "Ville",
-    "NUMBER_OF_STARS": "Nuombre d'étoiles ",
+    "NUMBER_OF_STARS": "Nombre des étoiles ",
     "MORE_DETAILS": "Plus de Details",
     "ADULT": "Adulte",
     "ADULTS": "Adultes",

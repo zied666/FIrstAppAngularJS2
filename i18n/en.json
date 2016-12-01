@@ -11,6 +11,8 @@
   },
   "HOTELS": {
     "ROOMS": "Rooms",
+    "LIST": "List of hotels",
+    "FOUNDDED": "Hotel(s) Found",
     "SEARCH_HOTELS": "Search Hotels",
     "ROOM": "Room",
     "NAMES": "Names",
