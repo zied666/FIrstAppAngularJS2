@@ -1,8 +1,8 @@
 import {Component, OnInit, transition} from '@angular/core';
 import {LoginService} from "../login/login.service";
 import {Router} from "@angular/router";
-import {LocalStorageService} from "../core/localStorage.service";
 import {TranslateService} from "ng2-translate";
+import {LocalStorageService} from "../shared/services/localStorage.service";
 
 @Component({
     moduleId: module.id,

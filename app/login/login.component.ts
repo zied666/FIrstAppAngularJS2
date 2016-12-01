@@ -1,7 +1,7 @@
 import {Component, OnInit, animate, transition, trigger, state, style}      from '@angular/core';
 import {LoginService} from "./login.service";
 import {Router} from "@angular/router";
-import {LocalStorageService} from "../core/localStorage.service";
+import {LocalStorageService} from "../shared/services/localStorage.service";
 
 @Component({
     moduleId: module.id,

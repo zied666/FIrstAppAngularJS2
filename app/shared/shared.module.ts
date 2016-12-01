@@ -8,6 +8,7 @@ import {ShowsignePipe} from "./pipes/showsigne.pipe";
 import {HighlightDirective} from "./directives/highlight.directive";
 import {LoadingComponent} from "./components/loading.component";
 import {AlertComponent} from "./components/alert.component";
+import {LocalStorageService} from "./services/localStorage.service";
 
 @NgModule({
     imports: [
@@ -32,6 +33,9 @@ import {AlertComponent} from "./components/alert.component";
         TranslateModule,
         LoadingComponent,
         AlertComponent
+    ],
+    providers:[
+        LocalStorageService
     ]
 })
 export class SharedModule {
