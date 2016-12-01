@@ -402,7 +402,6 @@
 </nav>
 <loading *ngIf="loadingList"></loading>
 <alert class="info" [view]="!loadingList && hotels.length ==0" text="HOTELS.NO_AVAILABLE"></alert>
-<!--<p *ngIf="!loadingList && hotels.length ==0" class="bg-warning">{{"HOTELS.NO_AVAILABLE"|translate}}</p>-->
 <div class="col-md-12 " *ngFor="let hotel of hotels">
     <list-single-hotel [hotel]="hotel" [search]="search"></list-single-hotel>
 </div>
