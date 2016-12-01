@@ -1,5 +1,6 @@
 <h1>{{"PROFILE.TITLE"|translate}}</h1>
 <alert class="danger" [view]="error" text="PROFILE.INVALID_FORM"></alert>
+<alert class="danger" [view]="captchaError" text="PROFILE.INVALID_CAPTCHA"></alert>
 <form [hidden]="confirmed" (ngSubmit)="onSubmit()" #loginForm="ngForm">
     <div class="form-group">
         <label>{{"PROFILE.EMAIL"|translate}}</label>
@@ -11,6 +12,7 @@
         <input type="password" [(ngModel)]="password" required name="password" class="form-control"  #pwd="ngModel">
         <div [@errorMessage]="pwd.valid || pwd.pristine" class="text-danger">{{"PROFILE.PASSWORD_REQUIRED"|translate}}</div>
     </div>
+    <re-captcha (captchaResponse)="handleCorrectCaptcha($event)" site_key="6LfolQ0UAAAAAMEnFklPKmUfV3QW9MFGPr_XY5Js"></re-captcha>
     <button type="submit" class="btn btn-default" [disabled]="!loginForm.form.valid || loading">
         <span *ngIf="loading">{{"PROFILE.LOADING"|translate}} ...</span>
         <span *ngIf="!loading">{{"PROFILE.SUBMIT"|translate}}</span>

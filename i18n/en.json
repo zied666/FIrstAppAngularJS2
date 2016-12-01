@@ -43,6 +43,7 @@
     "PHONE": "Phone",
     "UPDATE": "Update",
     "VALID_FORM": "Your data has been updated successfully",
+    "INVALID_CAPTCHA": "Invalid Captcha",
     "PHONE_REQUIRED": " Phone is required",
     "NOM_REQUIRED": " First Name is required",
     "PRENOM_REQUIRED": " Last Name is required"

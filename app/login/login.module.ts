@@ -5,10 +5,11 @@ import {FormsModule} from "@angular/forms";
 import {LoginService} from "./login.service";
 import {HttpModule} from "@angular/http";
 import {ProfileComponent} from "./profile/profile.component";
+import {ReCaptchaModule} from "angular2-recaptcha";
 
 
 @NgModule({
-  imports:      [ SharedModule,FormsModule,HttpModule ],
+  imports:      [ SharedModule,FormsModule,HttpModule,ReCaptchaModule ],
   declarations: [ LoginComponent,ProfileComponent ],
   providers:    [ LoginService  ]
 })
