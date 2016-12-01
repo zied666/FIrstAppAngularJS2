@@ -1,4 +1,4 @@
-import {Component, Input, OnChanges, SimpleChanges, OnInit} from '@angular/core';
+import {Component, Input, OnChanges, SimpleChanges, OnInit, SimpleChange} from '@angular/core';
 
 @Component({
     selector: 'alert',
@@ -9,13 +9,14 @@ import {Component, Input, OnChanges, SimpleChanges, OnInit} from '@angular/core'
             </div>    
 `
 })
-export class AlertComponent implements OnInit{
+export class AlertComponent implements OnChanges{
     @Input() class: String; //success,info,warning and danger
     @Input() view: Boolean;
     @Input() text: String;
 
-    ngOnInit() {
-        if(this.view)
+    ngOnChanges(changes: {[propKey: string]: SimpleChange}) {
+        if(changes['view'].currentValue)
             setTimeout(() => this.view = false, 3000);
     }
+
 }

@@ -61,7 +61,10 @@ export class LoginComponent implements OnInit {
                 this.loading = false;
             });
         } else
+        {
             this.captchaError = true;
+            setTimeout(() => this.captchaError = false, 3000);
+        }
     }
 
 
