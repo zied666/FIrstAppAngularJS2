@@ -38,7 +38,7 @@ export class HotelListSearchComponent implements OnInit {
             roomsString += ";";
         }
         roomsString = roomsString.substr(0, roomsString.length - 1);
-        this.search.rooms = roomsString;
+        this.search.rooms=roomsString;
         this.sendSearch.emit(this.search);
     }
 

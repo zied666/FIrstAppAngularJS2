@@ -29,6 +29,7 @@ export class HotelListComponent implements OnInit {
         this.hotels = [];
         this.haveMore = true;
         this.loadingList = true;
+        this.updateCountHotels();
         this.update();
     }
 
@@ -38,6 +39,7 @@ export class HotelListComponent implements OnInit {
         this.haveMore = true;
         this.hotels = [];
         this.search.offset = 0;
+        this.updateCountHotels();
         this.update();
     }
 
@@ -49,7 +51,6 @@ export class HotelListComponent implements OnInit {
     }
 
     update() {
-        this.updateCountHotels();
         if (this.subscribe != null)
             this.subscribe.unsubscribe();
         this.subscribe = this.hotelService.getHotels(this.search).subscribe(hotels => {
@@ -70,15 +71,4 @@ export class HotelListComponent implements OnInit {
         }
     }
 
-    updateSort(lib: string) {
-        if (lib == this.search.orderBy) {
-            if (this.search.order == "DESC")
-                this.search.order = "ASC";
-            else
-                this.search.order = "DESC";
-        }
-        else
-            this.search.orderBy = lib;
-        this.updateSearch(this.search);
-    }
 }

@@ -14,6 +14,7 @@ import {HotelListSinglePriceComponent} from "./list/single/prices/hotel.list.sin
 import {HotelListSinglePriceArrangementComponent} from "./list/single/prices/hotel.list.single.price.arrangement.component";
 import {AppRoutingModule} from "../app-routing.module";
 import {HotelListSearchComponent} from "./list/search/hotel.list.search.component";
+import {HotelListSortComponent} from "./list/search/hotel.list.sort.component";
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import {HotelListSearchComponent} from "./list/search/hotel.list.search.componen
     ],
     declarations: [
         HotelListComponent,
+        HotelListSortComponent,
         HotelListSearchComponent,
         HotelListSingleComponent,
         HotelListSinglePriceComponent,

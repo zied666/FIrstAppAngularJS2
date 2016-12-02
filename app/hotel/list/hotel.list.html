@@ -1,45 +1,5 @@
 <hotel-list-search [search]="search" (sendSearch)="updateSearch($event)"></hotel-list-search>
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#filtre-hotels" aria-expanded="true">
-                <span class="sr-only">{{"HOTELS.LIST"|translate}}</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#" *ngIf="countHotels!=null">
-                <strong>{{countHotels}}</strong> {{"HOTELS.FOUNDDED"|translate}}
-            </a>
-        </div>
-        <div class="collapse navbar-collapse"   id="filtre-hotels">
-
-            <ul class="nav navbar-nav navbar-right">
-                <li ngClass="{'active':search.orderBy=='libelle'}">
-                    <a href="javascript:void(0)" (click)=" updateSort('libelle');">
-                        {{'HOTELS.NAMES'|translate}}
-                        <span *ngIf="search.order=='DESC' && search.orderBy=='libelle'" class="glyphicon glyphicon-sort-by-alphabet-alt"></span>
-                        <span *ngIf="search.order=='ASC' && search.orderBy=='libelle'" class="glyphicon glyphicon-sort-by-alphabet"></span>
-                    </a>
-                </li>
-                <li ngClass="{'active':search.orderBy=='categorie'}">
-                    <a href="javascript:void(0)" (click)=" updateSort('categorie');">
-                        {{'HOTELS.STARS'|translate}}
-                        <span *ngIf="search.order=='DESC' && search.orderBy=='categorie'" class="glyphicon glyphicon-sort-by-order-alt"></span>
-                        <span *ngIf="search.order=='ASC' && search.orderBy=='categorie'" class="glyphicon glyphicon-sort-by-order"></span>
-                    </a>
-                </li>
-                <li ngClass="{'active':search.orderBy=='ville'}">
-                    <a href="javascript:void(0)" (click)=" updateSort('ville');">
-                        {{'HOTELS.CITIES'|translate}}
-                        <span *ngIf="search.order=='DESC' && search.orderBy=='ville'" class="glyphicon glyphicon-sort-by-alphabet-alt"></span>
-                        <span *ngIf="search.order=='ASC' && search.orderBy=='ville'" class="glyphicon glyphicon-sort-by-alphabet"></span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
+<hotel-list-sort [search]="search" [countHotels]="countHotels" (sendSearch)="updateSearch($event)" ></hotel-list-sort>
 <loading *ngIf="loadingList"></loading>
 <alert class="info" [view]="!loadingList && hotels.length ==0" text="HOTELS.NO_AVAILABLE"></alert>
 <div class="col-md-12 " *ngFor="let hotel of hotels">
