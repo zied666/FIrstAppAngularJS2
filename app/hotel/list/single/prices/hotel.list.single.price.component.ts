@@ -1,6 +1,6 @@
 import {Component, Input, OnInit}   from '@angular/core';
 import {Search} from "../../../object/search";
-import {HotelService} from "../../../hotel.service";
+import {HotelService} from "../../../../shared/services/hotel.service";
 
 @Component({
     moduleId: module.id,

@@ -9,6 +9,8 @@ import {HighlightDirective} from "./directives/highlight.directive";
 import {LoadingComponent} from "./components/loading.component";
 import {AlertComponent} from "./components/alert.component";
 import {LocalStorageService} from "./services/localStorage.service";
+import {StateDirective} from "./directives/state.directive";
+import {HotelService} from "./services/hotel.service";
 
 @NgModule({
     imports: [
@@ -21,7 +23,8 @@ import {LocalStorageService} from "./services/localStorage.service";
         ShowsignePipe,
         HighlightDirective,
         LoadingComponent,
-        AlertComponent
+        AlertComponent,
+        StateDirective
     ],
     exports: [
         PersonsPipe,
@@ -32,10 +35,12 @@ import {LocalStorageService} from "./services/localStorage.service";
         FormsModule,
         TranslateModule,
         LoadingComponent,
-        AlertComponent
+        AlertComponent,
+        StateDirective
     ],
-    providers:[
-        LocalStorageService
+    providers: [
+        LocalStorageService,
+        HotelService
     ]
 })
 export class SharedModule {

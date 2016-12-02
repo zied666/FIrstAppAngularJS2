@@ -10,8 +10,6 @@ export class AppComponent implements OnInit {
 
 
     ngOnInit() {
-
         $('body').addClass('loaded');
-
     }
 }

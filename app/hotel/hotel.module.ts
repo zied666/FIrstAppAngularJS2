@@ -1,6 +1,5 @@
 import {NgModule}            from '@angular/core';
 import {SharedModule}        from '../shared/shared.module';
-import {HotelService} from "./hotel.service";
 import {InfiniteScrollModule} from 'angular2-infinite-scroll';
 import {HotelDetailComponent} from "./details/hotel.detail.component";
 import {HotelListComponent} from "./list/hotel.list.component";
@@ -38,8 +37,7 @@ import {HotelListSortComponent} from "./list/search/hotel.list.sort.component";
         HotelDetailGeolocationComponent,
         HotelDetailFicheComponent,
         HotelDetailSeasonsComponent,
-    ],
-    providers: [HotelService]
+    ]
 })
 export class HotelModule {
 }
