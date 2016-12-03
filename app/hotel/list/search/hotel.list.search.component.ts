@@ -1,6 +1,7 @@
 import {Component, OnInit, Input, Output, EventEmitter}   from '@angular/core';
-import {Search} from "../../object/search";
 import {Room} from "../../object/room";
+import {SearchService} from "../../../shared/services/search.service";
+import {Search} from "../../object/search";
 
 @Component({
     moduleId: module.id,
@@ -10,7 +11,6 @@ import {Room} from "../../object/room";
 
 export class HotelListSearchComponent implements OnInit {
 
-    @Input() search: Search;
     @Output() sendSearch = new EventEmitter();
     chambreCount: number;
     room1: Room;
@@ -19,13 +19,20 @@ export class HotelListSearchComponent implements OnInit {
     room4: Room;
     room5: Room;
 
+    private search: Search;
+
+    constructor(private searchService: SearchService) {
+        this.search =searchService.getSearch();
+    }
+
     ngOnInit() {
-        this.chambreCount = 1;
-        this.room1 = new Room();
-        this.room2 = new Room();
-        this.room3 = new Room();
-        this.room4 = new Room();
-        this.room5 = new Room();
+        var data: any[] = this.search.rooms.split(";");
+        this.chambreCount = data.length;
+        this.room1 = new Room(data[0]);
+        this.room2 = new Room(data[1]);
+        this.room3 = new Room(data[2]);
+        this.room4 = new Room(data[3]);
+        this.room5 = new Room(data[4]);
     }
 
     updateRooms() {
@@ -39,7 +46,8 @@ export class HotelListSearchComponent implements OnInit {
         }
         roomsString = roomsString.substr(0, roomsString.length - 1);
         this.search.rooms=roomsString;
-        this.sendSearch.emit(this.search);
+        this.searchService.setSearch(this.search);
+        this.sendSearch.emit(true);
     }
 
 }

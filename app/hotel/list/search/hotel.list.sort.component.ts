@@ -1,6 +1,7 @@
 import {Component, OnInit, Input, Output, EventEmitter}   from '@angular/core';
 import {Search} from "../../object/search";
 import {Room} from "../../object/room";
+import {SearchService} from "../../../shared/services/search.service";
 
 @Component({
     selector: 'hotel-list-sort',
@@ -49,11 +50,16 @@ import {Room} from "../../object/room";
 `,
 })
 
-export class HotelListSortComponent  {
+export class HotelListSortComponent {
 
-    @Input() search: Search;
     @Input() countHotels: number;
     @Output() sendSearch = new EventEmitter();
+
+    private search: Search;
+
+    constructor(private searchService: SearchService) {
+        this.search = searchService.getSearch();
+    }
 
     updateSort(lib: string) {
         if (lib == this.search.orderBy) {
@@ -64,7 +70,7 @@ export class HotelListSortComponent  {
         }
         else
             this.search.orderBy = lib;
-        this.sendSearch.emit(this.search);
+        this.sendSearch.emit(false);
     }
 
 }

@@ -1,8 +1,8 @@
 import {Component, OnInit}   from '@angular/core';
 import {Subscription} from "rxjs";
 import {Hotel} from "../object/hotel";
-import {Search} from "../object/search";
 import {HotelService} from "../../shared/services/hotel.service";
+import {SearchService} from "../../shared/services/search.service";
 
 @Component({
     moduleId: module.id,
@@ -13,13 +13,12 @@ export class HotelListComponent implements OnInit {
 
     countHotels: number = null;
     hotels: Hotel[];
-    search = new Search();
     loadingList: Boolean;
     loadingMore: Boolean;
     haveMore: Boolean;
     subscribe: Subscription;
 
-    constructor(private hotelService: HotelService) {
+    constructor(private hotelService: HotelService, private searchService: SearchService) {
     }
 
 
@@ -32,19 +31,19 @@ export class HotelListComponent implements OnInit {
         this.update();
     }
 
-    updateSearch(search: Search) {
-        this.search = search;
+    updateSearch(updateCount: Boolean) {
         this.loadingList = true;
         this.haveMore = true;
         this.hotels = [];
-        this.search.offset = 0;
-        this.updateCountHotels();
+        this.searchService.resetOffset();
+        if (updateCount)
+            this.updateCountHotels();
         this.update();
     }
 
     updateCountHotels() {
         this.countHotels = null;
-        this.hotelService.getCount(this.search).subscribe(count => {
+        this.hotelService.getCount().subscribe(count => {
             this.countHotels = count;
         });
     }
@@ -52,7 +51,7 @@ export class HotelListComponent implements OnInit {
     update() {
         if (this.subscribe != null)
             this.subscribe.unsubscribe();
-        this.subscribe = this.hotelService.getHotels(this.search).subscribe(hotels => {
+        this.subscribe = this.hotelService.getHotels().subscribe(hotels => {
             this.loadingList = false;
             this.loadingMore = false;
             if (hotels.length > 0)
@@ -64,7 +63,7 @@ export class HotelListComponent implements OnInit {
 
     onScroll() {
         if (!this.loadingList && !this.loadingMore && this.haveMore) {
-            this.search.offset += this.search.limit;
+            this.searchService.incrementLimit();
             this.loadingMore = true;
             this.update();
         }

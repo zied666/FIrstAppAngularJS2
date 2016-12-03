@@ -11,6 +11,7 @@ import {AlertComponent} from "./components/alert.component";
 import {LocalStorageService} from "./services/localStorage.service";
 import {StateDirective} from "./directives/state.directive";
 import {HotelService} from "./services/hotel.service";
+import {SearchService} from "./services/search.service";
 
 @NgModule({
     imports: [
@@ -40,7 +41,8 @@ import {HotelService} from "./services/hotel.service";
     ],
     providers: [
         LocalStorageService,
-        HotelService
+        HotelService,
+        SearchService
     ]
 })
 export class SharedModule {
