@@ -1,6 +1,7 @@
 export class Hotel {
     details: Details;
     saison: string;
+    prices: any;
 }
 export class Details {
     id: number;
@@ -25,8 +26,8 @@ export class Details {
     tags: Object;
     chaine: Object;
 
-    public getChaine(){
-        if(this.chaine)
+    public getChaine() {
+        if (this.chaine)
             return "ddd";
         else
             return "";

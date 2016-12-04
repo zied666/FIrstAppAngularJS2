@@ -15,6 +15,7 @@ export class HotelService {
 
     getHotels(): Observable<Hotel[]> {
         let params = new URLSearchParams();
+        params.set('rooms', this.searchService.getSearch().rooms);
         params.set('nuitees', this.searchService.getSearch().nuitees.toString());
         params.set('checkIn', this.searchService.getSearch().checkIn);
         params.set('limit', this.searchService.getSearch().limit.toString());
@@ -31,6 +32,7 @@ export class HotelService {
 
     getCount(): Observable<number> {
         let params = new URLSearchParams();
+        params.set('rooms', this.searchService.getSearch().rooms);
         params.set('nuitees', this.searchService.getSearch().nuitees.toString());
         params.set('checkIn', this.searchService.getSearch().checkIn);
         params.set('search', this.searchService.getSearch().nom);
