@@ -21,7 +21,7 @@ export class HotelListSinglePriceComponent implements OnInit {
     ngOnInit() {
         this.loading=true;
         this.error=false;
-        this.hotelService.getPrice(this.id, this.search).subscribe(
+        this.hotelService.getPrice(this.id).subscribe(
             (data) => {
                 this.arrangements = data.arrangements;
                 this.loading=false;
