@@ -12,18 +12,18 @@
         </div>
         <div class="collapse navbar-collapse dropdown" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav ">
-                <li>
+                <li [ngClass]="{active: router.url=='/'}">
                     <a routerLink="/">{{"MENU.HOMEPAGE"|translate}}</a>
                 </li>
-                <li>
+                <li [ngClass]="{active: router.url=='/hotel'}">
                     <a routerLink="/hotel">{{"MENU.HOTELS"|translate}}</a>
                 </li>
             </ul>
             <ul class="nav navbar-nav" style="float: right;">
-                <li *ngIf="loginService.logedUser == null">
+                <li *ngIf="loginService.logedUser == null" [ngClass]="{active: router.url=='/login'}">
                     <a routerLink="login" routerLinkActive="active">{{"MENU.LOGIN"|translate}}</a>
                 </li>
-                <li *ngIf="loginService.logedUser != null">
+                <li *ngIf="loginService.logedUser != null" [ngClass]="{active: router.url=='/profile'}">
                     <a routerLink="profile" routerLinkActive="active">{{"MENU.HI"|translate}} {{loginService.logedUser.nom}} {{loginService.logedUser.prenom}}</a>
                 </li>
                 <li *ngIf="loginService.logedUser != null">

@@ -19,6 +19,7 @@ export class HeaderComponent implements OnInit {
     }
 
     ngOnInit() {
+        console.log(this.router);
         this.agence = Config.AGENCE;
         this.version = Config.VERSION;
         this.translate.addLangs(["en", "fr"]);

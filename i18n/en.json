@@ -28,7 +28,10 @@
     "CHILDS": "Childs",
     "YEARS_OLD": "Years old",
     "NO_AVAILABLE": "No hotels available",
-    "ROOMS_NO_AVAILABLE": "No Rooms available"
+    "ROOMS_NO_AVAILABLE": "No Rooms available",
+    "NIGHT": "Night",
+    "NIGHTS": "Nights",
+    "CLEAR": "Clear"
   },
   "PROFILE": {
     "TITLE": "My Profil",
